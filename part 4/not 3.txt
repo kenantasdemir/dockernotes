@@ -1,0 +1,50 @@
+docker pull registry
+clear
+
+docker run -d -p 5000:5000 --restart always --name mycontainer registry
+//registry imajından mycontainer adlı container oluşturur. bu container detach olarak çalışır
+//5000 portu containerın 5000 portu ile eşlenir.
+//--restart always ile de container durduğunda yeniden çalışacağı belirtildi.
+
+container exited olduğunda container yeniden çalışır
+container içindeki process durduğunda
+always,no,on-failure,unless-stop
+on-failure sadece hata olduğunda yeniden başlatır(manuel kapatıldığında çalışmaz)
+unless-stop manuel olarak durdurduysak başlamaz
+
+docker ps
+//çalışan containerları listeler.
+
+docker imageının tagi aynı zamanda o imagın nerede durduğunu belirliyor
+
+clear
+docker image tag kenant42/ornekdocker:latest 127.0.0.1:500/ornekdocker:latest
+//kenant42/hello-app:latest adlı imajın adını 127.0.0.1:500/hello-app:latest olarak yeniden adlandırır (tag atar). 
+
+
+docker image push 127.0.0.1:5000/ornekdocker:latest
+//ornekdocker:latest adlı imaj yerel repoya yüklendi.
+
+docker pull 127.0.0.1:500/ornekdocker:latest
+//yerel repodan ornekdocker:latest adlı imajı çeker.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+docker attach 12a793b3fec0
+//Bu komut detach modda ve shell bağlantısı ile oluşturulmuş container'a bağlanır.
+
+
+docker container rm -f $(docker ps -aq)
+//Sistemde çalışan ya durmuş bütün containerları siler.
+
+
+docker top 12a793b3fec0
+//Çalışan container'daki processleri listeler:
+
+
+//docker logs -f 12a793b3fec0
+Bu komut sayesinde container tarafından oluşturulan logları anlık olarak izleriz.:
+
+
+
+
+docker network connect kopru 12a793b3fec0
+//Çalışan bir container'ı başka bir network'e bağlandı.
+
+
+docker network disconnect kopru 12a793b3fec
+//Çalışan bir container'ın bağlı olduğu networkle bağlantısını kesildi.:

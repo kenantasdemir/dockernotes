@@ -1,0 +1,63 @@
+docker container run --name websunucu -p 80:80 -d kenant42/ornekdocker
+//kenant42/ornekdocker imajından websunucu adlı bir container oluşturur.bu container detach olarak çalışır.
+//80 portunu containerın 80 portuna eşler.
+
+docker ps
+//çalışan containerları listeler.
+
+docker container exec -it websunucu sh
+//çalışan container bağlandık ve shell açtık
+
+docker restart websunucu
+//container restart edildi.
+
+docker stop websunucu
+//container durduruldu.
+
+docker start websunucu
+//container başlatıldı.
+
+docker container run --name websunucu2 -p 8080:80 kenant42/ornekdocker
+
+*********************************************************************************************************
+
+
+Docker union file system kulllanır
+docker imajlar mevcut bir base üzerine inşa edilir
+
+yapılan her değişiklik bir katman olarak eklenir ve bu katmanlar ayrı bir dosya olarak depolanır
+union file system sayesinde bu katmanlar tek bir dosya sistemi şeklinde görülür.
+
+docker imaj readonly olarak kalır
+her containerın bir yazılabilir katmanı vardır  ve değişiklikler oarada tutulur.
+
+docker container prune
+//sistemde çalışmayan containerları siler
+
+docker image prune -a
+//bütün imajları siler
+
+docker image pull alpine
+//alpine isimli imajı çeker
+
+docker image pull kenant42/ornekdocker
+//kenant42/ornekdocker imajını çeker.
+
+
+imajlar layerlardan oluşur. layerlar ortak ise imajlar ortak layerlar kullanır.
+
+Docker imajları, bir veya daha fazla layer (katman) içerir. 
+Bu katmanlar, imajın dosya sistemini oluşturmak için kullanılır ve
+ her katman, bir önceki katmanın üzerine eklenir. 
+Her katman, bir dosya veya bir dizi dosya ve klasör içerebilir.
+
+Docker imajları arasında ortak olan katmanlar, disk alanından tasarruf etmek için paylaşılabilir.
+ Yani, bir imajda kullanılan katmanlar, başka bir imajda da kullanılabilir.
+ Bu, imajların daha az disk alanı kullanmasına ve daha hızlı indirilmesine olanak sağlar.
+
+Örneğin, ubuntu imajı, çeşitli diğer Docker imajları tarafından da kullanılır. 
+Bu nedenle, Docker imajları arasında ortak olan katmanlar, 
+aynı disk alanını birden çok imaj için kullanarak disk kullanımını optimize eder ve imajların indirilmesini hızlandırır.
+
+
+

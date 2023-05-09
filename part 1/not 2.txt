@@ -1,0 +1,45 @@
+
+
+  Containerlar tek bir uygulama çalıştırmak için oluşturulurlar. 
+  Containerlar bu tek uygulamanın çalışması için gerekli tüm gereksinimlerin
+  önceden hazırlandığı image dediğimiz objelerden yaratılırlar. Containerla ilgili
+ tüm bu gereksinimlerin imaj seviyesinde tamamlanmış olması beklenir.
+
+  Bir container içinde çalışan ana uygulama durdurulduğu anda container da
+  durdurulur. Container durduğu anda sistemin sorun olduğunu anlayarak aynı
+  imajdan aynı ayarlarla yeni bir container yaratarak sistemin çalışmaya devam
+  etmesi sağlanabilir.
+
+  Container içerisindeki uygulamada bir sıkıntı oluşursa veya herhangi bir yanlışlık
+  varsa bu container içerisine bağlanılarak çözülmez. Container durdurulup yerine
+  sıfırdan yeni bir container yaratılır. Eğer sıkıntı ayarlarla veya config ile ilgiliyse,
+  sorun imaj yaratma aşamasında çözülür ve sorunun çözüldüğü yeni bir imaj
+  ortaya çıkarılarak bundan yeni bir container yaratılır.
+
+
+
+Union File System (Birleşik Dosya Sistemi), Docker'da kullanılan bir dosya sistemidir.
+ Union File System, birden çok dosya sisteminin tek bir dosya sistemi gibi görünmesini sağlar.
+
+Union File System, birden fazla dosya sisteminin katmanlarını (layers) bir araya getirir.
+ Her katman, bir önceki katmanın üzerine eklenir ve dosya sistemi, 
+tüm katmanların birleşimi olarak oluşur. 
+Böylece, bir dosya veya klasör birden fazla katmanda yer 
+alabilir ve dosyaların farklı katmanlardaki sürümleri birleştirilebilir.
+
+Docker kullanarak bir container çalıştırdığınızda, Union File System, 
+container'ın dosya sistemi için kullanılır. Bu sayede, Docker container'ları 
+arasında dosyaların paylaşılması ve disk alanından tasarruf edilmesi mümkün olur. Union File System, 
+bu özellikleri nedeniyle Docker'da imajların ve container'ların hızlı bir şekilde oluşturulmasını ve yönetilmesini sağlar.
+
+Union File System, Docker'ın varsayılan dosya sistemi olan OverlayFS ve AUFS gibi farklı sürümleri vardır. 
+Bu dosya sistemleri, katmanların birleştirilmesi için farklı yöntemler kullanır ve farklı özelliklere sahiptir.
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+docker volume create ilkvolume
+//ilkvolume adlı volume nesnesi oluşturuldu.
+
+docker volume inspect ilkvolume
+//ilkvolume adlı volume nesnesinin özellikleri görüntülendi.
+
+docker container run -it -v ilkvolume:/uygulama alpine sh
+//volumeü container içerisindeki uygulama klasörüne bağladık
+
+imaj içinde olmayan klasörede bir volume bağlayabiliriz. klasör yoksa oluşturulur.
+
+docker container run -it -v ilkvolume:/deneme3:ro centos sh
+//volume deneme3 klasörünün içine ro olarak eklendi
+
+*******************************************************************************************************
+
+docker container run --rm -it ozgurozturknet/adanzyedocker sh
+//--rm ile container kapatılıdğında containerı siler
+
+*******************************************************************************************************
+
+Bind Mount
+Bind mount, Docker konteynerlarının ana bilgisayar dosya sistemine erişebilmesini sağlayan bir yöntemdir. 
+Bu, Docker konteynerlarının, ana bilgisayar dosya sisteminden belirli bir dosyaya veya dizine erişebileceği anlamına gelir.
+
+docker container run -v /opt/myapp:/app myapp
+//Bu komut, myapp adlı bir Docker imajı kullanarak yeni bir konteyner oluşturur ve 
+//--volume veya kısaltılmışı olan -v seçeneğiyle /opt/myapp:/app bağlantısını belirtir. 
+//Bu, ana bilgisayarın /opt/myapp dizinindeki tüm dosyaların Docker konteynerının /app dizinine bağlanmasını sağlar.
+
+
+
+

@@ -1,0 +1,123 @@
+docker kurulumu yapıldığında sisteme docker daemon ve docker cli kurulur
+docker-cli docker-engine ile rest api üzerinden konuşur
+
+cli ile docker engine yönetilir.
+daemon container yaratıp çalıştırmamızı sağlayan ana uygulamadır.
+
+docker version
+//docker versiyonunu görüntüler.
+
+docker daemon linux işletim sistemine yüklenir
+client ise windowsa  yüklenir
+
+docker info
+//Bu komutun çıktısı, Docker ana bilgisayarınızın tüm konteynerlarının, görüntülerinin, 
+//ağlarının, birimlerinin, işlemlerinin ve sistem bilgilerinin özetini içerir. 
+
+docker run hello-world
+//hello-world imajından bir container oluşturduk.
+
+docker container run hello-world
+
+docker image --help
+//docker image komutu hakkında yardım sayfası görüntülenir
+
+docker image rm --help
+//docker image rm komutu hakkında yardım sayfası görüntülenir
+
+docker image rm -f hello-world
+
+docker container --help
+
+docker container run --help
+docker container run --name ilkcontainer ozgurozturknet/app1
+//ozgurozturknet/app1 imajından ilkcontainer isimli container oluşturuldu ve çalıştırıldı.
+
+docker container ls -a
+//çalışan ve durmuş olan bütün containerları listeler
+
+docker imajları bir linux dağıtmıdır fakat içinde çekirdek yoktur.
+
+docker container run -p 80:80 kenant42/ornekdocker
+-p 80:80 parametresi, Docker container'ının hangi portlarda dinleneceğini belirtir. 
+Bu parametre, Docker hostu ve container arasında bir port yönlendirmesi (port forwarding) oluşturur.
+
+80:80 ifadesindeki ilk 80, Docker hostunda açık olan port numarasını belirtir. 
+İkinci 80 ise Docker container'ında açık olan port numarasını belirtir. 
+Yani, bu örnekte Docker container'ında 80 numaralı port kullanılıyor ve bu port, 
+Docker hostunda da 80 numaralı portla eşleştiriliyor.
+
+Bu yönlendirme sayesinde, Docker container'ı 80 numaralı portu dinlerken,
+ bu portu kullanan herhangi bir istek Docker hostundaki 80 numaralı porta yönlendirilir 
+ve Docker container'ına iletilir.
+ Bu sayede, Docker container'ındaki uygulamalar Docker hostu üzerinden erişilebilir hale gelir.
+
+Bu komut örneği, kenant42/ornekdocker isimli Docker imajını çalıştırır ve 
+Docker container'ının 80 numaralı portunu Docker hostundaki 80 numaralı porta yönlendirir. 
+Bu sayede, Docker hostundaki web tarayıcısı gibi bir uygulama kullanılarak 
+http://localhost adresi üzerinden Docker container'ındaki uygulamaya erişilebilir.
+
+
+docker container ls
+//çalışan containerları listeler
+
+docker container logs 4ad4ha654gdf
+//idsi belirtilen containerı loglarını listeler.
+
+docker container run --name denemecon kenant42/ornekdocker java app1
+//kenant42/ornekdocker imajından denemecon isimli bir container oluşturur.
+//bu container içerisinde default uygulama olarak java programı kullanılarak app1 isimli dosya çalıştırılır.
+
+docker container stop 4ad4ha654gdf
+//id değeri belirtilen containerı durdurur.
+
+docker container run -d -p 80:80 kenant42/ornekdocker
+//kenant42/ornekdocker imajından bir container oluşturur. bu container detach olarak çalışır ve 8080 portu ile containerın 80 portu eşlenir.
+
+docker container ls
+//çalışan containerları görüntüler.
+
+docker container rm fha4da4h6 hafdG7ad98 jgjD5f6g4daHa
+//belirtilen idlere sahip containerları siler.
+
+
+docker container rm -f gas4d545asdg45
+//çalışan containerı durdurur ve siler.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
