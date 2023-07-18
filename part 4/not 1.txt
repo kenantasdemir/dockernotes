@@ -30,3 +30,14 @@ aynı repo içinde birden fazla image tutulabilir
 
 bir image'a birden fazla tag atılabilir
 aynı id'ye birden fazla tag verilebilir
+
+docker run -dit --name=my_container ubuntu bash
+docker wait my_container
+//docker wait komutu, belirli bir Docker konteynerinin tamamlanmasını beklemek için kullanılır. 
+//Bu komut, bir konteynerin çalışmasını bekler ve çıkış durumunu döndürür.
+
+
+
+
+
+
