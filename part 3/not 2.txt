@@ -123,10 +123,16 @@ docker network connect --ip 10.10.36.122 kopru2 mySecondContainer
 //mySecondContainer adlı containerı kopru2 network objesine bağlandı.
 //kopru2 ağı içerisinde kullanması için spesifik id atandı.
 
+docker network disconnect kopru2 mySecondContainer
+//mySecondContainer adlı containerın kopru2 nesnesiyle bağlantısı sonlandırıldı.
+
+docker network prune --force --filter until=5m
+//sistemdeki oluşturulma zamanı 5 dakikadan fazla olan network objelerini siler.
+//--force seçeneği ile onay istemeden silinmeleri sağlanır.
 
 
-
-
+docker network rm networkID kopru2
+//id değeri ve ismi belirtilen network objelerini siler.
 
 
 
