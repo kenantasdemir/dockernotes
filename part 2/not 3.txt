@@ -10,7 +10,7 @@ docker container run -it -v ilkvolume:/uygulama alpine sh
 imaj içinde olmayan klasörede bir volume bağlayabiliriz. klasör yoksa oluşturulur.
 
 docker container run -it -v ilkvolume:/deneme3:ro centos sh
-//volume deneme3 klasörünün içine ro olarak eklendi
+//volume deneme3 klasörünün içine ro(readonly) olarak eklendi
 
 *******************************************************************************************************
 
