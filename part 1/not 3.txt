@@ -113,6 +113,24 @@ docker volume create deneme1
 docker volume ls
 //volume nesnelerini listeler.
 
+docker volume inspect deneme1
+//deneme1 adlı volume nesnesinin özelliklerini görüntüler.
+
+docker volume prune
+//kullanılmayan volume nesnelerini siler.
+
+docker volume prune --filter "label=myLabel"
+//kullanılmayan volume nesnelerinden sadece label değeri "myLabel" olanları siler.
+
+docker volume rm volumeId1 volumId2 volumId3
+//idleri belirtilen volume nesnelerini siler.
+
+docker volume update
+//bu komut sadece swarm modda çalışır.
+--availability active pause drain
+
+
+
 -----------------------------------------------
 
 
