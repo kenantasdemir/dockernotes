@@ -1,0 +1,13 @@
+docker stack ls
+
+docker stack ps firstStack
+
+docker stack rm firstStack
+
+docker stack services --filter name=myapp_web --filter name=myapp_db myapp
+//myapp, stack adıdır. iki adet servis listeler.
+
+docker stack config --compose-file docker-compose.yaml --compose-file docker-compose.prod.yaml
+//stack yapılandırmasını birden fazla dosyayla yapılandırıldı.
+
+
