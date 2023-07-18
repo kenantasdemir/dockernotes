@@ -1,0 +1,31 @@
+docker system df -v
+//Bu komutu, Docker sistem kaynaklarının kullanımını ve dağılımını gösteren bir rapor sağlar. 
+//Bu komut, Docker'da kullanılan disk alanı, resimler, konteynerler, ağlar ve diğer bileşenlerin disk kullanımını görüntüler.
+
+docker system events --since "2017-01-05"
+//belirtilen tarihten itibaren sistem olaylarını görüntüler.
+
+docker system info
+//sistemle ilgili bilgileri görüntüler.
+
+docker system prune
+//kullanılmayan verileri siler
+
+docker system prune -a --volumes
+//kullanılmayan bütün nesneleri siler.
+//volumeleri harici olarak belirtmemiz gereklidir.
+
+
+docker pause containerId
+docker unpause containerID
+
+docker kill myContainer
+docker kill --signal=SIGHUB
+
+docker save busybox | busybox.tar
+
+docker save --output busybox.tar busybox
+
+docker save -o fedora-latest.tar fedora:latest
+
+docker save -o ubuntu.tar ubuntu:lucid ubuntu:saucy
