@@ -1,0 +1,14 @@
+docker secret create username .\username.txt
+//username.txt adlı dosyanın içeriğini username secret nesnesine atar.
+
+
+echo "bu bir denemedir." | docker secret create denemesecret
+
+docker exec -it containerID sh
+/run/secrets altında secret nesneleri saklanır.
+
+
+docker service create -d --name secretdeneme --secret username --secret sifre kenant42/app1
+
+echo "sifrelenecekmetin" | docker secret create sifre2 -
+docker service update --secret-rm sifre --secret-add sifre2 secretdeneme
