@@ -13,6 +13,24 @@ docker container run kenant42/app1
 docker image --help
 //docker image komutu hakkında yardım sayfası görüntüler.
 
+docker image inspect ubuntu:latest
+//ubuntu:latest imajı hakkında detaylı bilgi görüntüler
+
+docker image prune
+//kullanılmayan imajları siler.
+
+docker image ls
+//sistemde mevcut olan imajları listeler.
+
+docker image history ubuntu:latest
+//ubuntu:latest imajına ait geçmişi görüntüler.
+
+docker image load --input fedora.tar
+//fedora.tar içindeki dosyaları imaj olarak yükler.
+
+docker image load < fedora.tar
+//yukarıdaki komutun alternatifidir. Bu komutta imajları STDIN kullanarak yükler.
+
 docker image rm --help
 //docker image rm komutu hakkında yardım sayfası görüntüler.
 
