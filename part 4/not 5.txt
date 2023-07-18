@@ -1,0 +1,36 @@
+docker service create --name test nginx
+
+docker service ps test
+
+docker service inspect test
+
+docker service create --name firstService --network myNetwork -p 8080:80 --replicas=10 --update-delay=10s --update-parallelism=2 kenant42/app1
+
+docker service scale firstService=3
+
+docker service rm test
+
+docker service ls
+
+docker service update --detach --update-delay 5s --update-parallelism 2 --image kenant42/app1:v2 websrv
+watch docker service ps websrv
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
