@@ -105,6 +105,29 @@ docker network rm kopru1
 
 
 
+default bridge netwrk objesi
+bu network nesnesine bağlı containerlar birbirleriyle haberleşebilir
+fakat DNS yani isim çözümleme yoktur.
+çalışan containerlara bağlanamazlar.
+
+kullanıcı tanımlı bridge nesnelerinde ise
+DNS vardır. çalışan containerlara bağlanabilirler.
+
+
+
+docker run -dit --network=kopru2 myContainer
+//bir container başlatırken network nesnesi bağlandı.
+
+
+docker network connect --ip 10.10.36.122 kopru2 mySecondContainer
+//mySecondContainer adlı containerı kopru2 network objesine bağlandı.
+//kopru2 ağı içerisinde kullanması için spesifik id atandı.
+
+
+
+
+
+
 
 
 
