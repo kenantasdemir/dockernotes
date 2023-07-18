@@ -1,0 +1,16 @@
+docker update --cpu-shares 512 containerID
+//idsi belirtilen container CPU kısıtı eklendi
+
+docker update -m 300M containerID
+//idsi belirtilen containera 300 mb bellek kısıtı koyuldu. 
+
+docker update --restart=on-failure:3 containerID1 containerID2
+//id değerleri belirtilen containerlara restart policy atandı.
+//bu container artık hata durumuyla karşılaştığında yeniden başlayacak
+//fakat 3 defadan fazla hataya düşerse artık yeniden başlamayacak.
+
+docker update --cpus=2 containerID
+//idsi belirtilen containerlara cpu kullanım kotası getirildi. en fazla 2 cpu kullanabilir.
+
+
+docker update ve docker container update komutu artık windows containerları için desteklenmiyor.
