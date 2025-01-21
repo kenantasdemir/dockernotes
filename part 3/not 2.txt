@@ -25,7 +25,11 @@ docker container rm -f hfda5ad56had56hf hgfsja99afdsag5v12
 //id değerleri belirtilen 2 containerı siler
 //-f seçeneği ise bu containerların çalışması durumunda silmeye zorlar.
 
+docker run --rm --network host nginx
 
+// bir sistemde sadece 1 adet host türünde network objesi bulunabilir
+//docker network create --driver bridge kopru2
+//host network oluşturdu
 
 docker network create kopru1
 //kopru1 adlı network nesnesi oluşturuldu.
@@ -62,6 +66,11 @@ docker attach websunucu
 user tanımlı bridge'e bağlı olan containerlar arasında DNS hizmeti vardır
 
 ---------------------------------------------------------------------------------------------------------------------------------------
+
+
+user tanımlı bridge'e bağlı olan containerlar arasında 
+DNS hizmeti vardır
+
 
 docker network create --driver=bridge --subnet=10.10.0.0/16 --ip-range=10.10.10.0/24 --gateway=10.10.10.10 kopru2
 docker network ls
@@ -113,6 +122,18 @@ fakat DNS yani isim çözümleme yoktur.
 kullanıcı tanımlı bridge nesnelerinde ise
 DNS vardır. çalışan containerlara bağlanabilirler.
 
+read escape sequence
+docker network connect kopru2 database
+bir Docker konteynerini mevcut bir Docker ağına bağlamak için kullanılır. 
+Bu komut, bir konteyneri yeni bir ağa bağlayarak, 
+ağ üzerinde farklı konteynerlerle iletişim kurmasını sağlar.
+docker attach database
+çalışmakta olan bir Docker konteynerine bağlanmanıza olanak tanır. 
+Bu komut, konteynerin standart giriş (stdin), 
+standart çıkış (stdout) ve standart hata (stderr) akışlarını, 
+yani konteynerin terminal çıktısını görmenizi ve etkileşime geçmenizi 
+sağlar.
+
 
 
 docker run -dit --network=kopru2 myContainer
@@ -133,6 +154,16 @@ docker network prune --force --filter until=5m
 
 docker network rm networkID kopru2
 //id değeri ve ismi belirtilen network objelerini siler.
+
+docker network rm kopru2
+docker container rm -f websunucu database
+docker network rm kopru1
+
+
+Docker container Logs containerID
+Docker logs --details containerName
+
+
 
 
 
