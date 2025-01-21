@@ -76,6 +76,21 @@ volumeleri containerlara mount ederiz
 image içinde olmayan klasörede volume bağlayabiliriz
 
 
+docker container run -it -v ilkvolume:/uygulama alpine sh
+container içine bağlanacak klasör = uygulama
+alpine = image
+
+volumeleri containerlara mount ederiz
+
+image içinde olmayan klasörede volume bağlayabiliriz
+
+volumelerin containerlarla bir bağları yoktur
+
+docker container run -it -v ilkvolume:/deneme3:ro centos sh
+
+ro = readonly
+
+
 
 docker container run -it -v ilkvolume:/deneme3:ro centos sh
 //Bu komut, CentOS imajını kullanarak interaktif bir konteyner oluşturur. 
@@ -193,6 +208,10 @@ Bind Mount, Docker komut satırı aracılığıyla veya Dockerfile dosyaları ar
 docker container run -d -p 80:80 ozgurozturknet/adanzyedocker
 docker ps -a
 
+docker container run -d -p 88:80 -v C:\AdanzyeDocker\kisim3\bolum28\websitesi:/usr/share/nginx/html nginx
+docker rm -f containerID
+
+
 
 docker container run -d -p 80:80 --name ilkweb nginx
 docker exec -it containerID sh
@@ -215,6 +234,58 @@ Daha sonra, herhangi bir değişiklik yaptığınızda bu değişiklikler Docker
 Böylece, uygulamanızda yapılan değişiklikler Docker container'ına yansıyacak ve uygulamanız Docker container'ı içinde çalışmaya devam edecektir.
 
 bind mount kendi sistemlerimizde development yaparken kullandığımız bir özellik
+
+
+docker volume prune
+
+Description
+Remove all unused local volumes. Unused local volumes are those which are not referenced by any containers. 
+By default, it only removes anonymous volumes.
+
+Options
+Option	Default	Description
+-a, --all		API 1.42+ Remove all unused volumes, not just anonymous ones
+--filter		Provide filter values (e.g. label=<label>)
+-f, --force		Do not prompt for confirmation
+
+docker volume create
+docker volume inspect
+docker volume ls
+docker volume prune
+docker volume rm
+docker volume update
+
+-----------------------------------------------
+
+
+docker container run --rm -it -v deneme1:/test ozgurozturnet/adanzyedocker sh
+//test klasörü yoktur yeni oluşturulur içi boş bir şekilde
+deneme1 isimli volumeü bu container içindeki test klasörüne mount ettik
+exit
+
+
+docker container run --rm -it -v deneme1:/usr/src/myapp ozgurozturnet/adanzyedocker sh
+ls
+// /usr/src/myapp içindeki dosyalar volume kopyalanır
+exit
+
+
+docker container run --rm -it -v deneme1:/xyz alpine sh
+cd /xyz
+ls
+exit
+docker ps -a
+docker volume ls
+
+-----------------------------------------------
+
+docker container run --rm -it -v deneme1:/usr/src/myapp ozgurozturnet/adanzyedocker sh
+ls
+
+dolu bir volumeü dolu bir klasöre mount ederseniz sadece volume içindeki dosyalar görünür
+
+-----------------------------------------------
+
 
 
 
