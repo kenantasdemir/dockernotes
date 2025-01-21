@@ -28,6 +28,11 @@ docker image push 127.0.0.1:5000/ornekdocker:latest
 docker pull 127.0.0.1:500/ornekdocker:latest
 //yerel repodan ornekdocker:latest adlı imajı çeker.
 
+docker image tag ozgurozturknet/hello-app:latest 127.0.0.1:500/hello-app:latest
+docker image tag ozgurozturknet/hello-app:latest 127.0.0.1:5000/hello-app:latest
+(yeni tag eklendi)
+
+
 
 
 
