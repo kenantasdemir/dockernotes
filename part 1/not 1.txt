@@ -1,4 +1,6 @@
-
+docker image pull ozgurozturknet/app1
+docker container run --name ilkcontainer ozgurozoturknet/app1
+docker container run --name ikincicontainer ozgurozturknet/app2
 
 docker version
 docker info
@@ -12,6 +14,9 @@ docker container run kenant42/app1
 
 docker image --help
 //docker image komutu hakkında yardım sayfası görüntüler.
+
+docker image rm --help
+docker image rm -f hello-world
 
 docker image inspect ubuntu:latest
 //ubuntu:latest imajı hakkında detaylı bilgi görüntüler
@@ -115,6 +120,11 @@ docker container rm ShY65fh56ad g6sdf5sd65 k445f4dsdf4h
 docker container rm -f containerID
 //bu şekilde çalışan container silinebilir.
 
+
+docker run -p [host_port]:[container_port]/[protocol] [image_name]
+docker run -p 80:80/udp myfirstimage
+
+
 ########################################################################################
 
 
@@ -191,6 +201,100 @@ docker image pull alpine
 
 docker image pull kenant42/ornekdocker
 //kenant42/ornekdocker adlı imajı çeker
+
+
+
+Docker kurulduğunda Docker daemon ve docker cli kurulur.
+Docker cli ise enginele REST API üzerinden konuşur.
+Daemon linuxta çalışır
+
+
+Docker Version
+Docker info
+Docker
+
+Docker run hello-world
+Docker Container rum hallo-world
+
+Docker image rm --help
+
+Docker Containeriner run --name ilkcontainer imageName
+Container çalıştırıldığında Container Shelli client shelline bağlanır.
+
+Docker Container ls 
+#$çalışan containerları listeler
+
+Docker Container ls -a
+#$çalışan ve çalışmayan containerları listeler. 
+
+
+Docker Container run -p 80:80 imageName
+
+Docker Container Logs containerID
+
+Docker Container stop ContainerinerID
+
+ÇALIŞAN CONTAİNER SİLİNEMEZ
+
+Docker Container rm -f containerID
+#$ÇALIŞAN CONTAİNERI SİLMEYE ZORLAR
+
+
+Docker Container run --websunucu -p 80:80 -d imageName 
+Docker Container exec -it websunucu sh
+
+Docker Container start containerID
+
+
+Docker UNION FILE SYSTEM kullanır
+Docker imajları mevcut Bir base imaj üzerine inşaa edilir.
+
+
+Her containerın kendine ait yazılabilir katmanı vardır.
+Tim değişiklikler Korda tutulur.
+Imajlar read only olarak kalur.
+
+
+Copy on Write
+
+docker container prune
+#çalışmayan tüm containerları siler
+
+docker container kill -s
+#çalışan tüm containerları siler. s parametresi ile sinyal gönderir.
+
+Docker image prune -a
+
+Docker image pull alpine
+
+Docker Container run -it -v ilkvolume:/containericindekiKlasor alpine sh
+
+Docker volume ls
+
+Docker container run --rm -it imageName sh
+#rm opsiyonuyla container kapatıldığında silinir.
+
+#Exit ile containerla bağlantı kesilir.
+
+docker volume create denemeVolume
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
