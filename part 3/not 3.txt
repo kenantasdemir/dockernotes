@@ -6,6 +6,9 @@ docker logs appbir
 docker container run -d --name con1 -p 80:80 nginx
 docker ps
 
+docker logs containerName
+docker exec -it con1 sh
+
 
 docker exec -it con1 sh
 //con1 adlı containerda interaktif şekilde shell bağlantısı yapıldı.
