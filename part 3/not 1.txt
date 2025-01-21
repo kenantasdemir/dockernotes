@@ -87,6 +87,8 @@ docker container run -it --name denemecontainer --net none kenant42/ornekdocker 
 
 //none network objesine sahip containerlar networke bağlanamaz
 
+Default bridgelar arasında DNS hizmeti yoktur.
+
 
 
 
