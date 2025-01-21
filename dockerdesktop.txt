@@ -1,0 +1,16 @@
+docker desktop engine --> windows only
+//containerları listelemek ve değiştirmek için komutlar
+
+docker desktop restart
+
+docker desktop start
+
+docker desktop status
+
+docker desktop stop
+
+docker init
+.dockerignore
+Dockerfile
+compose.yaml
+README.Docker.md

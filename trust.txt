@@ -1,0 +1,16 @@
+docker trust sign be33imajiki:latest
+bu işlemi yapabilmek için oturum açmalı ve imaja tag atamalısınız
+
+docker trust inspect alpine:latest --pretty
+
+docker trust key generate --dir myTrustKey /keyUretilecekKlasorAdi
+
+docker trust key load myTrustKey.pem
+
+docker trust signer add ahmet exampleDirectory/trust-demo --key ahmet.crt
+//public key ile gerçekleşir
+
+docker trust signer remove ahmet exampleDirectory/trust-demo --force
+
+docker trust revoke example/trust-demo:red
+//imzalanmış bir tag nesnesinden imzayı kaldırır.

@@ -1,0 +1,19 @@
+Docker Stack Nedir?
+Docker Stack, bir uygulamanın dağıtımını, yapılandırmasını ve yönetimini kolaylaştırmak için kullanılan bir konsepttir. 
+Stack, birden fazla servisin bir grup halinde ele alınmasını sağlar. 
+Her bir servis, belirli bir işlevi yerine getiren Docker konteynerlerinden oluşur.
+
+Docker Stack'in Özellikleri
+Çoklu Servis Yönetimi: Birden fazla servisi tek bir yapılandırma dosyası (genellikle docker-compose.yml) ile tanımlayabilirsiniz.
+Orkestrasyon: Docker Stack, Swarm Mode'da çalışır ve konteynerlerin dağıtımı, ölçeklenmesi ve yük dengelemesi gibi işlemleri yönetir.
+Deklaratif Konfigürasyon: YAML formatındaki bir dosyada (örneğin, docker-compose.yml), 
+uygulama yapılandırmasını tanımlayarak işlemleri otomatikleştirebilirsiniz.
+Servis İzleme ve Sağlık Durumu: Docker Stack, her bir servisin durumunu izleyerek gerektiğinde yeniden başlatabilir veya yeniden dağıtabilir.
+
+docker stack deploy --compose-file docker-compose.yml firstStack
+docker stack ls
+docker stack services firstStack
+docker stack rm firstStack
+
+docker stack config --compose-file dockercomposefile.yml
+

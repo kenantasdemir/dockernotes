@@ -1,0 +1,18 @@
+docker node ls --filter "label=foo"
+docker node ls --format table
+
+docker node rm swarmNode
+
+docker node promote nodeName
+//node'u manager olarak yükseltir.
+
+docker node demote nodeName
+//manager node'u normal node'a çevirir.
+
+docker node inspect nodeName
+
+docker node update --label-add foo worker1
+
+docker node update --label-add foo --label-add bar worker
+
+docker node update --label-add type=queue worker1

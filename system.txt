@@ -1,0 +1,28 @@
+docker system df --format table
+
+docker system df --format json
+
+docker system events
+
+docker system info --format table
+
+docker system info --format json
+
+docker system prune
+
+Option		    Description
+-a, --all		Remove all unused images not just dangling ones
+--filter		API 1.28+ Provide filter values (e.g. label=<key>=<value>)
+-f, --force		işlem sonrası onay için sorma!!
+--volumes		anonim volumeleri siler
+
+"Dangling" İmajlar ve "Unused" İmajlar Arasındaki Fark
+Dangling İmajlar: Bu, başka bir deyişle, etiketlenmemiş imajlardır. 
+Genellikle, eski imajlardan kalan ve başka konteynerler tarafından kullanılmayan, 
+geçici veya yarım kalan imajlardır. Docker'da bu tür imajlar dangling olarak tanımlanır ve 
+genellikle temizlik için hedef alınır.
+
+Unused İmajlar: Docker, kullanılmayan imajları "unused" olarak tanımlar. 
+Bu imajlar, herhangi bir konteyner tarafından kullanılmayan imajlardır. 
+Örneğin, bir konteyner silindiğinde, o konteynerin kullandığı imaj da kullanılmaz hale gelir, 
+ancak hala sistemde yer kaplamaya devam eder.
