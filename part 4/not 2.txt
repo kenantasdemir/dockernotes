@@ -148,6 +148,11 @@ docker ps
 docker stop hadf4ds56H4sh
 //idsi belirtilen containerı durdurur.
 
+docker image build -t ozgurozturknet/node .
+docker container run -d -p 80:8080 node2
+
+
+
 
 ###################################################################################################################3
 
@@ -223,9 +228,11 @@ docker run javaimj
 docker run javaimj ls
 //Bu komut, javaimaj adlı Docker imajını çalıştırır ve ls komutunu çalıştırarak imajın içindeki dosya listesini gösterir. 
 
-entrypoint runtime'da değiştirilmez. cmd'den farkı budur.
+ENTRYPOINT RUNTIME'DA DEĞİŞTİRİLEMEZ!!!! 
+CMD ILE GIRILEN KOMUT RUNTIME'DA DEGISTIRILEBILIR!!!!!
 her docker containerında ya entrypoint ya da cmd olmalıdır.
 her ikisi de olursa cmd komutu entrypointe parametre olarak eklenir
+ENTRYPOINT ONCE GELIR!!!!!!!
 
 
 docker image build -t pingimaj -f .\Dockerfile.Centos .
@@ -250,13 +257,20 @@ ENTRYPOINT talimatında yazılana parametre olarak eklenir.
 
 ###################################################################################################################3
 
+docker image build -t ozgurozturknet/hello-docker .
+
+tek bir run komutu içinde birden fazla işlem yapılabilir
+\ ile komutlarımızı daha okunaklı hale getirmek için bölmemizi sağlar
+
+
 docker image build -t myfirstimaj .
 //mevcut dizinde bulunan Dockerfile adlı dosyayı kullanarak myfirstimaj adlı yeni bir imaj oluşturur.
 
 docker container run --name firstcon myfirstimaj
 //myfirstimaj adlı imajdan firstcon adlı yeni bir container oluşturur.
 
-exec formda herhangi bir shell processi çalışmaz
+EXEC FORMDA HERHANGI BIR SHELL PROCESS ÇALIŞMAZ!!!!!
+
 
 docker container run --name shellcontainer myfirstimaj
 //myfirstimaj adlı imajdan shellcontainer adlı yeni bir container oluşturur.
@@ -266,12 +280,19 @@ ENV TEST-"Bu bir denemedir"
 CMD echo STEST
 
 
-exec formunda direkt process çalıştırabilirsiniz
-shell formunda ise shell'i açıp onu çalıştırabilirsiniz.
+EXEC FORMUNDA DIREKT OLARAK PROCESS CALISTIRABILIRSINIZ
+CMD ["executable", "param1", "param2", ...]
+
+
+SHELL FORMUNDA ISE SHELL ACIP ONU CALISTIRABILIRSINIZ
+CMD command param1 param2 //SHELL FORM YAPISI
+
 
 
 entrypoint ile cmd'yi aynı anda kullanıyorsanız shell kullanılamaz
-
+ENTRYPOINT ILE CMD AYNI ANDA KULLANILACAKSA EXEC FORM KULLAN!!
+Eğer böyle Bir senaryoda shell kullanılırsa cmd'deki komutlar entrypointe 
+parametre olarak aktarılmaz.
 
 ###################################################################################################################3
 
@@ -357,6 +378,120 @@ docker load -i .\con1imaj.tar
 
 
 ###################################################################################################################3
+
+
+
+###################################################################################################################3
+				---MULTISTAGE 1 --
+
+docker container run --name javauygulama javasdk
+
+docker cp javauygulama:/usr/src/uygulama .
+cd uygulama
+cd ..
+
+
+docker image build -t javajre -f .\Dockerfile.jre .
+
+
+	---MULTISTAGE 2 --
+
+docker image build -t javason .
+docker image ls
+
+
+###################################################################################################################3
+
+docker image build -t uygulama:3.7.6 .
+//İMAJA TAG ATANDI
+docker image build -t uygulama:3.8.1 .
+
+
+docker image build -t x1 --build-arg VERSION=3.7.1 .
+docker image build -t x2 --build-arg VERSION=3.8.1 .
+
+ARG ile oluşturulan değişkenler sadece image yaratılma aşamasında geçerli olur
+ARG ile tanımlanan değişken bu imajdan yaratılan container içerisinden erişilemez
+
+###################################################################################################################3
+
+docker image oluşturma yöntem 2(containerdan image oluşturma)
+
+
+docker container run -it --name con1 ubuntu:latest bash
+apt-get update
+mkdir /temp
+cd /temp
+apt-get install wget
+wget https://wordpress.org/latest.tar.gz
+exit
+clear
+
+docker commit con1 ozgurozturknet/con1:latest
+//ozgurozturknet/con1:latest tagli image haline geldi
+
+docker commit -a "kenant42" -m "Hello World" b33container be33imaj
+docker commit --change='CMD ["python", "app.py"]' my-container new-image:latest
+docker commit \
+  --change='ENV APP_ENV=production' \
+  --change='CMD ["node", "server.js"]' \
+  my-container new-image:latest
+
+
+
+
+docker run -it --name con2 ozgurozturknet/con1:latest bash
+cd /temp
+ls
+
+docker commit -c 'CMD ["java","uygulama"]' con1 ozgurozturknet/con1:ikinci
+docker image inspect ozgurozturknet/con1:ikinci
+
+
+###################################################################################################################3
+
+docker image ls
+mkdir image
+cd image
+ls
+clear
+
+docker save ozgurozturknet/con1:latest -o con1imaj.tar
+//docker imajını con1imaj.tar olarak dışarı aktardık
+
+ls
+docker load -i .\con1imaj.tar
+// ozgurozturknet/con1:latest isimli imaj oluşturdu
+
+
+
+
+###################################################################################################################3
+
+Dockerfile talimatlarında değişebilecek şeyler en altta bulunması gerekirken 
+değişmeyeceği öngörülen talimatlar üstte yer almalıdır.  
+Çünkü docker talimatları uygularken önbellek kullanır. 
+Değişiklik olmayan katmanda önbellek kullanırken 
+değişiklik olan katmanı yeniden oluştutur.
+
+
+
+
+EXEC FORM CMD ["java","uygulamaismi"]
+SHELL FORM cmd java uygulama
+
+Eğer kommt Shell formunda girilirse docker bu imajdan container yaratıldığı zaman 
+bu komutu varsayılan shelli çalıştırarak onun içerisinde girer. 
+Bu nedenle containerda çalışan 1.process yani pid1 bu shell processi olur.
+
+Eğer kommt Executive formunda girildiyse docker herhangi bir shell çalıştırmaz ve 
+komut direkt process olarak çalışır ve containerın pid1'i o process olur.
+
+Exec formunda çalıştırılan komutlar ortam değişkenlerine erişemez.
+ 
+
+
+
 
 
 
