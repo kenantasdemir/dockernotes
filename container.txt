@@ -1,5 +1,8 @@
 docker container containerID
-docker container actualContainerName containerNewName
+docker container rename actualContainerName containerNewName
+
+docker run -d --label app=webserver --label owner=ahmet nginx
+
 
 docker export red_panda_container > latest.tar
 
