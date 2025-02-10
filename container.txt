@@ -1,6 +1,11 @@
 docker container containerID
 docker container rename actualContainerName containerNewName
 
+docker commit old_container new_image
+docker rm old_container
+docker run --name new_container -d new_image
+
+
 docker run -d --label app=webserver --label owner=ahmet nginx
 
 
