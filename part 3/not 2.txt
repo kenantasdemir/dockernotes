@@ -17,6 +17,16 @@ docker container run -d --name websunucu1 kenant42/ornekdocker
 docker container run -it -d --name database1 kenant42/ornekdocker sh
 //kenant42/ornekdocker imajından database1 adlı container oluşturur ve bu container içinde shell açar
 
+-d (detached mode):
+Bu parametre, Docker container'ını arka planda çalıştırmak için kullanılır. Eğer -d parametresi eklenmezse, container terminale bağlanır ve çıktı terminalde görünür, ancak -d kullanıldığında, container arka planda çalışır ve terminali serbest bırakır.
+
+-it (interactive + TTY):
+-i (interactive): Container'ın etkileşimli modda çalışmasını sağlar. Bu, container içinde komut girmeyi ve çalıştırmayı mümkün kılar.
+
+-t (TTY): Terminal (TTY) için bir bağlantı sağlar, yani komutları yazmak ve çıktı almak için terminal benzeri bir ortam yaratır.
+Genellikle, -it kombinasyonu, kullanıcıların container ile etkileşimde bulunabilmesi için kullanılır. Örneğin, bir terminal açıp içine komut girebilmek için bu parametreler kullanılır.
+
+
 
 docker ps -a
 //çalışan ya da çalışmayan tüm containerları listeler.
@@ -34,8 +44,8 @@ docker run --rm --network host nginx
 docker network create kopru1
 //kopru1 adlı network nesnesi oluşturuldu.
 
-docker network create --driver host
-//host network oluşturdu
+docker network create mycustomnet --driver host
+//hata
 
 docker network ls
 //network objelerini listeler.
@@ -60,7 +70,7 @@ docker network inspect kopru1
 //kopru1 adlı network nesnesinin özelliklerini görüntüler.
 
 docker attach websunucu
-//database adlı docker konteynerının çalışma zamanı konsoluna bağlanmak için kullanılır.
+//websunucu adlı docker konteynerının çalışma zamanı konsoluna bağlanmak için kullanılır.
 
 
 user tanımlı bridge'e bağlı olan containerlar arasında DNS hizmeti vardır
