@@ -6,7 +6,7 @@ docker node inspect ifrstnode
 
 docker node rm firstnode
 
-docker node update --label-add foo --label-ad bar worker1node
+docker node update --label-add foo --label-add bar worker1node
 
 docker node update --role manager worker1node
 
