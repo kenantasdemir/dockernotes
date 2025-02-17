@@ -1,5 +1,7 @@
-docker container -d --name myContainer /usr/bin/top -b
+docker container run -d --name myContainer ozgurozturknet/adanzyedocker /usr/bin/top -b
 // container içerisinde /usr/bin/top komutu çalıştırılır. -b seçeneği ile bu işleme dair özet bilgiler görüntüler.
+
+docker image pull ozgurozturknet/adanzyedocker --quiet
 
 docker checkpoint create --leave-running myContainer myCustomCheckPoint
 //myContainer adlı containera ait bir checkpoint oluşturur ve adını myCustomCheckPoint atar.
