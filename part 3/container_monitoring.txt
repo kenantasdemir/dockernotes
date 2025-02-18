@@ -3,6 +3,9 @@ docker container run -d --name appbir kenant42/app1
 docker logs appbir
 //appbir adlı containerın loglarını görüntüler.
 
+docker stop $(docker ps -q)
+//çalışan tüm containerları durdurur.
+
 docker container run -d --name con1 -p 80:80 nginx
 docker ps
 
