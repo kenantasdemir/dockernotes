@@ -371,7 +371,7 @@ docker save kenant42/con1:latest -o con1imaj.tar
 //kenant42//con1:latest adlı imajı con1imaj.tar olarak kaydeder. yani sıkıştırır.
 
 
-docker load -i .\con1imaj.tar
+docker load -i con1imaj.tar
 //bu komut ile docker imajı bir arşiv dosyasından yüklenir.
 
 
