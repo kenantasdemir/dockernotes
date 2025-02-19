@@ -3,7 +3,7 @@ bu işlemi yapabilmek için oturum açmalı ve imaja tag atamalısınız
 
 docker trust inspect alpine:latest --pretty
 
-docker trust key generate --dir myTrustKey /keyUretilecekKlasorAdi
+docker trust key generate myTrustKey --dir /keyUretilecekKlasorAdi
 
 docker trust key load myTrustKey.pem
 
