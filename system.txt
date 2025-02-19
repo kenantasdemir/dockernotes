@@ -10,6 +10,8 @@ docker system info --format json
 
 docker system prune
 
+docker system prune --volumes
+
 Option		    Description
 -a, --all		Remove all unused images not just dangling ones
 --filter		API 1.28+ Provide filter values (e.g. label=<key>=<value>)
