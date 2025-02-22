@@ -1,3 +1,6 @@
+docker swarm init
+docker swarm leave
+
 docker node ls --filter "label=foo"
 docker node ls --format table
 
