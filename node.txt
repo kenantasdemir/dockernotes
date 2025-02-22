@@ -1,4 +1,7 @@
 docker swarm init
+
+docker swarm join-token worker
+
 docker swarm leave
 
 docker node ls --filter "label=foo"
