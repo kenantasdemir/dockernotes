@@ -15,6 +15,12 @@ docker service create --name redis \
 
 docker service create --name=redis --config redis-conf redis:7.4.1
 
+docker service create \
+  --name my_service \
+  --constraint 'node.labels.role==frontend' \
+  nginx:latest
+
+
 docker service create --replicas 10 --name redis --update-delay 10s --update-parallelism 2 redis:7.4.1
 
 docker service create --name redis_2 --replicas 5 --env MYVAR=foo --env MYVAR2=bar redis:7.4.1
