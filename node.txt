@@ -21,4 +21,8 @@ docker node update --label-add foo worker1
 
 docker node update --label-add foo --label-add bar worker
 
+docker node update --label-rm foo worker
+
+docker node update nodeName --role manager
+
 docker node update --label-add type=queue worker1
