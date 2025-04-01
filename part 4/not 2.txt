@@ -94,7 +94,8 @@ CMD ["java","uygulama"]
 Shell Form
 CMD java uygulama
 
-Eğer komut shell formunda girilirse docker bu imajdan container yaratıldığı zaman bu komutu varsayılan shelli çalıştırarak onun içerisine girer. Bu neden containerda çalışan 1.process yani pid1 su shell processi olur.
+Eğer komut shell formunda girilirse docker bu imajdan container yaratıldığı zaman bu komutu varsayılan shelli çalıştırarak onun içerisine girer. 
+Bu neden containerda çalışan 1.process yani pid1 su shell processi olur.
 
 Eğer komut exec formunda girildiyse docker herhangi bir shell çalıştırmaz ve komut direkt process olarak çalışır ve containerın pid1'i o process olur.
 
