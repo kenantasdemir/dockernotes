@@ -36,7 +36,7 @@ docker logs con1/containerID
 
 //container silinene kadar bu loglara erişilebilir
 
-docker logs --details con1
+**docker logs --details con1**
 //con1 adlı containerın detaylı loglarını görüntüler.
 
 docker logs -t con1
