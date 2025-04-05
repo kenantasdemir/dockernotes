@@ -13,37 +13,43 @@ Docker Network Driver Türleri
 
 
 
-
-docker network ls
+<b><mark>docker network ls</mark></b>
+</br>
 bridge hem bu driverın adı hemde dockerın default olarak oluşturduğu ilk networkede ayn isim verilir
 yeni bir container oluşturulurken hangi networke bağlı olacağını belirtmezseniz default olarak bridge.
 host networküne bağlayacağınız containerlar sanki bu makine üstüne çalışan bir process gibi davranır
 
-docker network inspect bridge
+</br>
+<b><mark>docker network inspect bridge</mark></b>
 //bridge adlı network objesinin özellikleri görüntülendi.
+</br>
 
-docker image ls
+
+<b><mark>docker image ls</mark></b>
 //tüm imajlar listelenir.
+</br>
 
-docker image inspect kenant42/ornekdocker
+<b><mark>docker image inspect kenant42/ornekdocker</mark></b>
+</br>
 //kenant42/ornekdocker adlı imajın özellikleri görüntülendi.
 
+</br>
 
-docker container inspect fasd4fasd45
+<b><mark>docker container inspect fasd4fasd45</mark></b>
+</br>
 //fasd4fasd45 id değerine sahip containerın özelliklerini görüntüler.
+</br>
 
-docker network inspect bridge
+<b><mark>docker network inspect bridge</mark></b>
+</br>
 
 
 
 docker container run -d kenant42/ornekdocker
+</br>
 //kenant42/ornekdocker imajından container oluşturur. bu container bridge networküne bağlıdır.
 // -d seçeneği containerın detache modda çalışacağını belirtir.
 
-docker network inspect bridge
-
-docker ps
-//containerları listeler.
 
 docker exec -it fasd4fasd45 sh
 //fasd4fasd45 id değerine sahip container içerisinde shell açar.
@@ -57,26 +63,29 @@ docker bu containera 172.17.0.1/16 networkünden sıradaki boş ip adresini veri
 default gateway olarak da docker0 interfaceinin adresini verir
 
 
-ctrl + p + q = containerla bağlantıyı keser ama kapatmaz
+<b><mark>docker container run -it --name deneme kenant42/ornekdocker sh</mark></b>
+</br>
 
-docker container run -it --name deneme kenant42/ornekdocker sh
-ifconfig
 
 ping 172.17.0.2
 //bağlantıyı kestiğimiz containerla hala haberleşebiliyoruz
 
-aynı bridge networküne bağlı containerlar birbirleriyle haberleşebilirler.
+<b><mark>docker container run -it --name deneme kenant42/ornekdocker sh</b></mark>
+</br>
 //exit ile yukarıda açtığımız shellden çıkarız.
 
-docker network ls
-//tüm network objelerini listeler.
+
 
 -------------------------------------
 
-hosta bağlı containerlar hiçbir network izolasyonu yoktur çalıştıkları networkün ağ altyapısını kullanırlar
+<div align="center">
+ hosta bağlı containerlar hiçbir network izolasyonu yoktur çalıştıkları networkün ağ altyapısını kullanırlar
 
-docker container run -it --name deneme1 --net host kenant42/ornekdocker sh
+</br>
+<b><mark>docker container run -it --name deneme1 --net host kenant42/ornekdocker sh</mark></b>
+<br>
 
+</div>
 
 -------------------------------------
 
