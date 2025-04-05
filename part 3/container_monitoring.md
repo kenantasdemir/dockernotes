@@ -71,14 +71,14 @@ docker container run --log-driver splunk nginx
 
 ###########################################################################333333
 
-docker top con1
+<b><mark>docker top con1</mark></b>
 //docker top komut containerın içine girmeye gerek kalmadan container içindeki processleri görmemizi sağlar
 //bu örnek con1 adlı containerın içindeki processler görüntülendi.
 
-docker stats
+<b><mark>docker stats</mark></b>
 //sistemde çalışan containerların kullandığı ram ve cpu, network i/o gibi bilgilerini verir
 
-docker stats con1
+<b><mark>docker stats con1</mark></b>
 //con1 adlı containerın kullandığı ram ve cpu, network i/o gibi bilgilerini verir
 
 
