@@ -10,7 +10,7 @@ docker container run -d --publish 8080:80 kenant42/ornekdocker
 //kenant42/ornekdocker imajından bir container oluşturur. 8080 portu ile containerın 80 portunu eşler.
 
 
-default bridge ile bağlı containerlar arasında DNS hizmeti yoktur
+:x: default bridge ile bağlı containerlar arasında DNS hizmeti yoktur
 
 
 docker container run -d --name websunucu1 kenant42/ornekdocker
