@@ -35,7 +35,7 @@ docker container run -d --name con1 -p 80:80 nginx
 docker logs con1/containerID
 
 //container silinene kadar bu loglara erişilebilir
-
+##
 **docker logs --details con1**
 //con1 adlı containerın detaylı loglarını görüntüler.
 
