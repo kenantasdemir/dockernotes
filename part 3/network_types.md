@@ -1,5 +1,5 @@
 
-<div style="text-center;">
+<div style="text-center;" align="center">
   <b><mark>Bridge</mark></b>
 </div>
 <br>
