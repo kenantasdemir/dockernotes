@@ -14,32 +14,32 @@ yaratıldığında aksi belirtilmediği takdirde varsayılan olarak buna bağlan
 Her sistemde host driver ile yaratılmış Host adında bir network bulunur.
 Bu networkte bağlı containerda network izolasyonu olmaz.
 Sanki o host üstünde çalışan bir process gibi hostun ağ kaynaklarını kullanır.
-<br>
+</br>
 
 
 <div align="center"><b><mark>MacVLAN</mark></b></div>
 <br>
 Bu driver ile oluşturulan network objeleri sayesinde containerlar fiziksel ağlara kendi mac adreslerine
 sahip birer fiziksel ağ adaptörüne sahipmişçesine bağlanabilirler.
-<br>
+</br>
 <div align="center">
   <b><mark>None</mark></b>
 </div>
-<br>
+</br>
 Container hiçbir şekilde ağ bağlantısına sahip olmasın istenirse bu driver ile yaratılan networke bağlanır.
 <br>
 
 <div align="center">
   <b><mark>Overlay</mark></b>
 </div>
-<br>
+</br>
 Ayrı hostlar üstündeki containerların aynı ağda çalışıyormuş gibi çalışması istendiği zaman Overlay networkler devreye girer.
 <br>
 
 <div align="center">
   <b><mark>Kullanıcı Tanımlı Bridge</mark></b>
 </div>
-<br>
+</br>
 Containerlar arası network izolasyonu sağlamak istersek ayrı bridge networkler yaratarak bunu sağlayabiliriz.
 
 Varsayılan dışında ip aralıkları tanımlanabilir.
