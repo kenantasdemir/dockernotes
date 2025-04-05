@@ -113,7 +113,7 @@ docker attach database
 //database adlı docker konteynerının çalışma zamanı konsoluna bağlanmak için kullanılır.
 
 
-bir container aynı anda birden fazla bridge bağlanabilir.
+✅ bir container aynı anda birden fazla bridge bağlanabilir.
 
 docker network disconnect kopru2 database
 //containerla köprü bağlantısını kestik
