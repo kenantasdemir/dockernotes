@@ -91,16 +91,19 @@ ping 172.17.0.2
 
 -------------------------------------
 
-docker container run -it --name denemecontainer --net none kenant42/ornekdocker sh
+<b><mark>docker container run -it --name denemecontainer --net none kenant42/ornekdocker sh</b></mark>
+</br>
 //kenant42/ornekdocker imajından denemecontainer adlı container oluşturur. none adlı networke bağlar.
 //ardından sh parametresi sayesinde bu container içinde shell açar.
 
 
-//none network objesine sahip containerlar networke bağlanamaz
+<div align="center">
+  //none network objesine sahip containerlar networke bağlanamaz
 
 Default bridgelar arasında DNS hizmeti yoktur.
 
 
+</div>
 
 
 
