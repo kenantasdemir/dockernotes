@@ -1,31 +1,43 @@
-docker container run -d --publish 8080:80
-docker container run -d --publish 8080:80 -p 8043:443
+<b><mark>docker container run -d --publish 8080:80 imageName</b></mark>
+<br>
+
+<b><mark>docker container run -d --publish 8080:80 -p 8043:443 imageName</mark></b>
+<br>
 //containerı detach olarak oluşturur. 8080 portu ile containerın 443 portu ile eşleştirir. 
 
-docker container run -d --publish 8080:80 -p 53:53/udp
+<br>
+<b><mark>docker container run -d --publish 8080:80 -p 53:53/udp imageName</mark></b>
 //container oluşturur ve Docker host'un 53 numaralı UDP portunu konteynerın 53 numaralı UDP portuna yönlendirir.
 
-
-docker container run -d --publish 8080:80 kenant42/ornekdocker
+<br>
+<b><mark>docker container run -d --publish 8080:80 kenant42/ornekdocker</mark></b>
 //kenant42/ornekdocker imajından bir container oluşturur. 8080 portu ile containerın 80 portunu eşler.
 
+<br>
 
 :x: default bridge ile bağlı containerlar arasında DNS hizmeti yoktur
 
+<br>
 
-docker container run -d --name websunucu1 kenant42/ornekdocker
-docker container run -it -d --name database1 kenant42/ornekdocker sh
+<b><mark> docker container run -d --name websunucu1 kenant42/ornekdocker</mark></b>
+<br>
+
+<b><mark>docker container run -it -d --name database1 kenant42/ornekdocker sh</mark></b>
 //kenant42/ornekdocker imajından database1 adlı container oluşturur ve bu container içinde shell açar
 
+<br>
 -d (detached mode):
 Bu parametre, Docker container'ını arka planda çalıştırmak için kullanılır. Eğer -d parametresi eklenmezse, container terminale bağlanır ve çıktı terminalde görünür, ancak -d kullanıldığında, container arka planda çalışır ve terminali serbest bırakır.
 
+
+<br>
 -it (interactive + TTY):
 -i (interactive): Container'ın etkileşimli modda çalışmasını sağlar. Bu, container içinde komut girmeyi ve çalıştırmayı mümkün kılar.
 
 -t (TTY): Terminal (TTY) için bir bağlantı sağlar, yani komutları yazmak ve çıktı almak için terminal benzeri bir ortam yaratır.
 Genellikle, -it kombinasyonu, kullanıcıların container ile etkileşimde bulunabilmesi için kullanılır. Örneğin, bir terminal açıp içine komut girebilmek için bu parametreler kullanılır.
 
+<br>
 
 
 docker ps -a
