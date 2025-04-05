@@ -39,7 +39,7 @@ docker logs con1/containerID
 <mark>docker logs --details con1</mark>
 //con1 adlı containerın detaylı loglarını görüntüler.
 
-docker logs -t con1
+<b><mark>docker logs -t con1</mark></b>
 // "con1" adlı bir Docker konteynerının log dosyalarını görüntülemek için kullanılır. 
 //Bu komut, konteynerın log dosyalarını sırayla gösterirken, her bir log satırının önünde zaman damgası (timestamp) ekler.
 
