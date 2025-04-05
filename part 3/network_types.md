@@ -1,4 +1,4 @@
-<b><mark>Bridge</mark></b>
+<center><b><mark>Bridge</mark></b></center>
 <br>
 default olan driverdır. network objesi yaratılırken özellikle başka bir driver belirtilmezse bridge driver ile network yaratılır.
 
@@ -6,7 +6,7 @@ Her docker kurulu host üstünde bridge driver ile yaratılmış Bridge adında 
 yaratıldığında aksi belirtilmediği takdirde varsayılan olarak buna bağlanır.
 <br>
 
-<b><mark>Host</mark></b>
+<center><b><mark>Host</mark></b></center>
 <br>
 Her sistemde host driver ile yaratılmış Host adında bir network bulunur.
 Bu networkte bağlı containerda network izolasyonu olmaz.
@@ -14,7 +14,7 @@ Sanki o host üstünde çalışan bir process gibi hostun ağ kaynaklarını kul
 
 
 
-<b><mark>MacVLAN</mark></b>
+<center><b><mark>MacVLAN</mark></b></center>
 <br>
 Bu driver ile oluşturulan network objeleri sayesinde containerlar fiziksel ağlara kendi mac adreslerine
 sahip birer fiziksel ağ adaptörüne sahipmişçesine bağlanabilirler.
