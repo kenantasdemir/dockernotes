@@ -1,4 +1,4 @@
-<b>mark>docker container run -it --env VAR1=deneme1 --env VAR2=deneme2 ubuntu bash</mark><b>
+<b><mark>docker container run -it --env VAR1=deneme1 --env VAR2=deneme2 ubuntu bash</mark><b>
 </br>
 //ubunu imajından bir container oluşturur ve bu container interaktif olarak bash açar.
 //bu container içinde VAR1 ve VAR2 olmak üzere 2 adet ortam değişkeni oluşturur.
