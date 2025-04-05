@@ -23,6 +23,7 @@
 
 2.yöntem
 <b><mark>docker container run -d --cpus="1.5" --cpuset-cpus="0,3" kenant42/ornekdocker</mark></b>
+<br>
 //--cpuset-cpus seçeneği, konteynerın hangi çekirdeklerin kullanılacağını belirtir. 
 //Bu örnekte, --cpuset-cpus="0,3" seçeneği kullanılarak konteynerın sadece 0 ve 3 numaralı çekirdekleri kullanması sağlanır.
 
