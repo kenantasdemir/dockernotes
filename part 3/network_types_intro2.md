@@ -73,7 +73,7 @@ docker attach websunucu
 //websunucu adlı docker konteynerının çalışma zamanı konsoluna bağlanmak için kullanılır.
 
 
-user tanımlı bridge'e bağlı olan containerlar arasında DNS hizmeti vardır
+:heavy_exclamation_mark: user tanımlı bridge'e bağlı olan containerlar arasında DNS hizmeti vardır
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
