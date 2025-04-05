@@ -122,7 +122,7 @@ docker network inspect kopru2
 
 
 
-:X: eğer bir köprü bir containera bağlı ise bu köprü silinemez
+:x: eğer bir köprü bir containera bağlı ise bu köprü silinemez
 
 
 docker network rm kopru2
