@@ -1,4 +1,4 @@
-<center><b><mark>Bridge</mark></b></center>
+<b style="text-align:center;"><mark>Bridge</mark></b>
 <br>
 default olan driverdır. network objesi yaratılırken özellikle başka bir driver belirtilmezse bridge driver ile network yaratılır.
 
