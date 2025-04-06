@@ -15,13 +15,13 @@
 <b><mark>docker container run -d --publish 8080:80 kenant42/ornekdocker</mark></b>
 <br>
 //kenant42/ornekdocker imajından bir container oluşturur. 8080 portu ile containerın 80 portunu eşler.
-
 <br>
 
 :x: default bridge ile bağlı containerlar arasında DNS hizmeti yoktur
 
 <br>
 
+---------------------------------------------------------------------------------------------------------------------------------------
 <b><mark> docker container run -d --name websunucu1 kenant42/ornekdocker</mark></b>
 <br>
 
@@ -43,6 +43,7 @@ Genellikle, -it kombinasyonu, kullanıcıların container ile etkileşimde bulun
 
 <br>
 
+---------------------------------------------------------------------------------------------------------------------------------------
 
 <b>docker ps -a</b>
 <br>
@@ -66,6 +67,7 @@ Genellikle, -it kombinasyonu, kullanıcıların container ile etkileşimde bulun
 </div>
 <br>
 
+---------------------------------------------------------------------------------------------------------------------------------------
 
 <b><mark>docker network create kopru1</mark></b>
 <br>
@@ -83,7 +85,7 @@ Genellikle, -it kombinasyonu, kullanıcıların container ile etkileşimde bulun
 <br>
 //kopru1 adlı network objesininin özelliklerini görüntüler.
 
-
+---------------------------------------------------------------------------------------------------------------------------------------
 
 <b><mark>docker container run -dit --name websunucu --net kopru1 kenant42/ornekdocker sh</mark></b>
 <br>
@@ -113,15 +115,13 @@ docker ps
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
-
-user tanımlı bridge'e bağlı olan containerlar arasında 
-DNS hizmeti vardır
+✅ user tanımlı bridge'e bağlı olan containerlar arasında DNS hizmeti vardır
 
 
-docker network create --driver=bridge --subnet=10.10.0.0/16 --ip-range=10.10.10.0/24 --gateway=10.10.10.10 kopru2
-docker network ls
+<b><mark>docker network create --driver=bridge --subnet=10.10.0.0/16 --ip-range=10.10.10.0/24 --gateway=10.10.10.10 kopru2</mark></b><br>
+<b><mark>docker network ls</mark></b><br>
 
-docker network inspect kopru2
+<b><mark>docker network inspect kopru2</mark></b>
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
@@ -156,6 +156,7 @@ default bridge'te bu özellik yok
 
 :x: eğer bir köprü bir containera bağlı ise bu köprü silinemez
 
+---------------------------------------------------------------------------------------------------------------------------------------
 
 <b><mark>docker network rm kopru2</mark></b>
 <br>
@@ -181,7 +182,7 @@ DNS vardır. çalışan containerlara bağlanabilirler.
 
 </div>
 <br>
-
+---------------------------------------------------------------------------------------------------------------------------------------
 <b><mark>docker network connect kopru2 database</mark></b>
 <br>
 
@@ -222,6 +223,7 @@ sağlar.
 <br>
 //--force seçeneği ile onay istemeden silinmeleri sağlanır.<br>
 
+---------------------------------------------------------------------------------------------------------------------------------------
 <b><mark>docker network rm networkID kopru2</mark></b><br>
 //id değeri ve ismi belirtilen network objelerini siler.
 <br>
