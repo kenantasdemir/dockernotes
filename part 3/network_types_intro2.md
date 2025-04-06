@@ -169,32 +169,42 @@ sağlar.
 
 
 
-docker run -dit --network=kopru2 myContainer
+<b><mark>docker run -dit --network=kopru2 myContainer</mark></b>
+<br>
 //bir container başlatırken network nesnesi bağlandı.
 
-
-docker network connect --ip 10.10.36.122 kopru2 mySecondContainer
+<b><mark>docker network connect --ip 10.10.36.122 kopru2 mySecondContainer</mark></b>
+<br>
 //mySecondContainer adlı containerı kopru2 network objesine bağlandı.
+<br>
 //kopru2 ağı içerisinde kullanması için spesifik id atandı.
-
-docker network disconnect kopru2 mySecondContainer
+<br>
+<b><mark>docker network disconnect kopru2 mySecondContainer</mark></b>
+<br>
 //mySecondContainer adlı containerın kopru2 nesnesiyle bağlantısı sonlandırıldı.
 
-docker network prune --force --filter until=5m
+<b><mark>docker network prune --force --filter until=5m</mark></b>
+<br>
 //sistemdeki oluşturulma zamanı 5 dakikadan fazla olan network objelerini siler.
+<br>
 //--force seçeneği ile onay istemeden silinmeleri sağlanır.
 
-
-docker network rm networkID kopru2
+<b><mark>docker network rm networkID kopru2</mark></b>
+<br>
 //id değeri ve ismi belirtilen network objelerini siler.
+<br>
+<b><mark>docker network rm kopru2</mark></b>
+<br>
 
-docker network rm kopru2
-docker container rm -f websunucu database
-docker network rm kopru1
+<b><mark>docker container rm -f websunucu database</mark></b>
+<br>
+
+<b><mark>docker network rm kopru1</mark></b>
+<br>
 
 
-Docker container Logs containerID
-Docker logs --details containerName
+
+
 
 
 
