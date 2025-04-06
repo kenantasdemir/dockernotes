@@ -1,28 +1,28 @@
 uygulamanın paketlenmiş hali bundan container oluşturuz
 image registry --> dockerhub,azure container registry
 
-docker image ls
+<b><mark>docker image ls</mark></b><br>
 //imajlar listelenir.
 
-docker run kenant42/ornekdocker echo "test"
-//kenant42/ornekdocker imajından bir container oluşturur ve bu container içerisinde  echo "test" komutunu çalıştırır.
+<b><mark>docker run kenant42/ornekdocker echo "test"</mark></b><br>
+//kenant42/ornekdocker imajından bir container oluşturur ve bu container içerisinde  echo "test" komutunu çalıştırır.<br>
 //ekrana "test" yazar.
 
-docker run 2b464g756H569F0 echo "test"
+<b><mark>docker run 2b464g756H569F0 echo "test"</mark></b><br>
 //idsi belirtilen container içerisinde echo "test" komutunu çalıştırır.
 
 
-docker image pull kenant42/ornekdocker
+<b><mark>docker image pull kenant42/ornekdocker</mark></b><br>
 //kenant42/ornekdocker imajını çeker.
 
-docker image pull ubuntu
+<b><mark>docker image pull ubuntu</mark></b><br>
 
-docker image pull gcr.io/google-containers/busybox
-docker pull kenant42/ornekdocker:v1
+<b><mark>docker image pull gcr.io/google-containers/busybox</mark></b><br>
+<b><mark>docker pull kenant42/ornekdocker:v1</mark></b><br>
 //kenant42/ornekdocker imajının v1 taglı sürümünü çeker.
 
 
-docker pull ubuntu:20.04
+<b><mark>docker pull ubuntu:20.04</mark></b><br>
 //ubuntu imajının 20.04 versiyonunu çeker.
 
 
