@@ -194,7 +194,7 @@ DNS vardır. çalışan containerlara bağlanabilirler.
   bir Docker konteynerini mevcut bir Docker ağına bağlamak için kullanılır. 
 Bu komut, bir konteyneri yeni bir ağa bağlayarak, 
 ağ üzerinde farklı konteynerlerle iletişim kurmasını sağlar.<br>
-<b><mark>docker attach database</mark></b>
+<br><b><mark>docker attach database</mark></b>
 <br>
 çalışmakta olan bir Docker konteynerine bağlanmanıza olanak tanır. 
 Bu komut, konteynerin standart giriş (stdin), 
