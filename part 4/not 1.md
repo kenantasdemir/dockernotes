@@ -29,12 +29,14 @@ docker pull ubuntu:20.04
 aynı repo içinde birden fazla image tutulabilir
 
 bir image'a birden fazla tag atılabilir
-aynı id'ye birden fazla tag verilebilir
+aynı id'ye birden fazla tag verilebilir<br>
 
-docker run -dit --name=my_container ubuntu bash
-docker wait my_container
-//docker wait komutu, belirli bir Docker konteynerinin tamamlanmasını beklemek için kullanılır. 
-//Bu komut, bir konteynerin çalışmasını bekler ve çıkış durumunu döndürür.
+
+<b><mark>docker run -dit --name=my_container ubuntu bash</mark></b><br>
+
+<b><mark>docker wait my_container</mark></b><br>
+//docker wait komutu, belirli bir Docker konteynerinin tamamlanmasını beklemek için kullanılır. <br>
+//Bu komut, bir konteynerin çalışmasını bekler ve çıkış durumunu döndürür.<br>
 
 
 
