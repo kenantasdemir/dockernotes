@@ -1,13 +1,12 @@
-docker logout
-// Docker Hub veya diğer Docker imaj kaynaklarına yapılmış olan oturum açma işlemini sonlandırır ve kullanıcının kimlik bilgilerini siler.s
+<b><mark>docker logout</mark></b><br>
+// Docker Hub veya diğer Docker imaj kaynaklarına yapılmış olan oturum açma işlemini sonlandırır ve kullanıcının kimlik bilgilerini siler.<br>
 
 
-docker login
-//docker imaj kaynağında oturum açar.
+<b><mark>docker login</mark></b><br>
+//docker imaj kaynağında oturum açar.<br>
 
-docker image ls
 
-Aksi belirtilmediği takdirde docker default olarak latest tagını kullanır.
+‼️ Aksi belirtilmediği takdirde docker default olarak latest tagını kullanır.
 
 
 docker image tag mysql:5 kenant42/ornekdocker:latest
