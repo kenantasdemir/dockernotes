@@ -69,6 +69,7 @@ Genellikle, -it kombinasyonu, kullanıcıların container ile etkileşimde bulun
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
+
 <b><mark>docker network create kopru1</mark></b>
 <br>
 //kopru1 adlı network nesnesi oluşturuldu.
