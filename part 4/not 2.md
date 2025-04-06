@@ -23,7 +23,7 @@ docker image pull kenant42/ornekdockerdeneme:latest
 //kenant42/ornekdockerdeneme imajının latest tagını çeker.
 
 
-###################################################################################################################3
+---
 
 
 docker image build -t kenant42/ornekdocker -f Dockerfile . 
@@ -31,7 +31,7 @@ docker container run kenant42/ornekdocker
 docker image history kenant42/ornekdocker
 
 
-###################################################################################################################
+---
 
 docker image history kenant42/ornekdocker
 //Bu komut, kenant42/ornekdocker adlı imajın geçmişini görüntülemeye yarar. 
@@ -46,7 +46,7 @@ docker image push kenant42/ornekdocker
 docker imageları layerlar halinde tutar
 
 
-###################################################################################################################3
+---
 
 
 
@@ -75,7 +75,7 @@ docker container run -d -p 80:8080 node2
 
 
 
-###################################################################################################################3
+---
 
 
 
@@ -85,7 +85,7 @@ ls ; date
 cat abc.txt && echo "dosya bulundu"
 cat def.txt || echo "dosya bulunamadı" 
 
-###################################################################################################################3
+---
 
 #sistemin düzgün çalıştığını ve nginx daemon'ının web sitesini publish etmekte bir sorun yaşamadığını test ediyoruz
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 CMD curl -f http://localhost/ || exit1
@@ -122,7 +122,7 @@ docker image inspect kenant42/ornekdocker
 
 kullandığınız base imagedaki değerler sizin imageınıza inherit edilir
 
-###################################################################################################################3
+---
 
 docker image build -t addcopy .
 //mevcut dizinde bulunan Dockerfile adlı dosyayı kullanarak addcopy adlı bir imaj oluşturur.
@@ -134,7 +134,7 @@ docker run -it addcopy sh
 
 uzak sunucudan alındığında add fonksiyonu ilgili sıkıştırılmış dosyayı açmaz direk atar
 
-###################################################################################################################3
+---
 
 docker image build -t javaimaj .
 //Bu komut, mevcut dizindeki Dockerfile'ı kullanarak javaimaj adlı bir Docker imajı oluşturur.
@@ -161,7 +161,7 @@ docker run pingimaj
 
 
 
-###################################################################################################################3
+---
 
 docker image build -t ozgurozturknet/hello-docker .
 
@@ -187,14 +187,14 @@ CMD echo STEST
 
 
 
-###################################################################################################################3
+---
 
 Multi-stage image build 
 imaj yaratma aşamasını kademelere bölmemize ve ilk kademede yarattığımız imaj içerisindeki dosyaları
 bir sonraki kademede oluşturacağımız imaja kopyalayabilmemize imkan sağlar. bu sayede nihai imaj boyutumuzun küçülmesine imkan tanıyor.
 
 
-###################################################################################################################3
+---
 
 docker image build -t uygulama:3.7.6 .
 //mevcut dizinde bulunan Dockerfile adlı dosyayı kullanarak yeni bir imaj oluşturur.
@@ -213,7 +213,7 @@ docker image build -t x2 --build-arg VERSION=3.8.1 .
 ARG ile oluşturulan değişkenler sadece image yaratılma aşamasında geçerli olur
 ARG ile tanımlanan değişken bu imajdan yaratılan container içerisinden erişilemez
 
-###################################################################################################################3
+---
 
 
 
@@ -256,14 +256,14 @@ docker image inspect kenant42/con1:ikinci
 
 
 
-###################################################################################################################3
+---
 
 
-docker save kenant42/con1:latest -o con1imaj.tar
-//docker save komutu docker imajını kaydetmek için kullanılır
-//kenant42//con1:latest kaydedilecek docker imajının adı ve etiketini belirtir.
-// -o con1imaj.tar parametresi docker imajının kaydedileceği yolu belirtir.
-//kenant42//con1:latest adlı imajı con1imaj.tar olarak kaydeder. yani sıkıştırır.
+<b><mark>docker save kenant42/con1:latest -o con1imaj.tar</mark></b><br>
+//docker save komutu docker imajını kaydetmek için kullanılır.<br>
+//kenant42//con1:latest kaydedilecek docker imajının adı ve etiketini belirtir.<br>
+// -o con1imaj.tar parametresi docker imajının kaydedileceği yolu belirtir.<br>
+//kenant42//con1:latest adlı imajı con1imaj.tar olarak kaydeder. yani sıkıştırır.<br>
 
 
 <b><mark>docker load -i con1imaj.tar</mark></b><br>
@@ -273,7 +273,7 @@ docker save kenant42/con1:latest -o con1imaj.tar
 
 
 
-###################################################################################################################3
+---
 				---MULTISTAGE 1 --
 
 docker container run --name javauygulama javasdk
@@ -292,7 +292,7 @@ docker image build -t javason .
 docker image ls
 
 
-###################################################################################################################3
+---
 
 docker image build -t uygulama:3.7.6 .
 //İMAJA TAG ATANDI
@@ -305,7 +305,7 @@ docker image build -t x2 --build-arg VERSION=3.8.1 .
 ARG ile oluşturulan değişkenler sadece image yaratılma aşamasında geçerli olur
 ARG ile tanımlanan değişken bu imajdan yaratılan container içerisinden erişilemez
 
-###################################################################################################################3
+---
 
 docker image oluşturma yöntem 2(containerdan image oluşturma)
 
@@ -340,7 +340,7 @@ docker commit -c 'CMD ["java","uygulama"]' con1 ozgurozturknet/con1:ikinci
 docker image inspect ozgurozturknet/con1:ikinci
 
 
-###################################################################################################################3
+---
 
 docker image ls
 mkdir image
@@ -358,7 +358,7 @@ docker load -i .\con1imaj.tar
 
 
 
-###################################################################################################################3
+---
 
 
 
