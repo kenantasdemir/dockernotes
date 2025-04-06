@@ -9,6 +9,7 @@
 <b><mark>docker container run -d --publish 8080:80 -p 53:53/udp imageName</mark></b>
 <br>
 //container oluşturur ve Docker host'un 53 numaralı UDP portunu konteynerın 53 numaralı UDP portuna yönlendirir.
+<br>
 
 <br>
 <b><mark>docker container run -d --publish 8080:80 kenant42/ornekdocker</mark></b>
@@ -43,8 +44,10 @@ Genellikle, -it kombinasyonu, kullanıcıların container ile etkileşimde bulun
 <br>
 
 
-docker ps -a
+<b>docker ps -a</b>
+<br>
 //çalışan ya da çalışmayan tüm containerları listeler.
+<br>
 
 <b>docker container rm -f hfda5ad56had56hf hgfsja99afdsag5v12</b>
 <br>
@@ -56,11 +59,12 @@ docker ps -a
 <b><mark>docker run --rm --network host nginx</mark></b>
 <br>
 
-<div align="center">
+<div>
   // bir sistemde sadece 1 adet host türünde network objesi bulunabilir
 //docker network create --driver bridge kopru2
 //host network oluşturdu
 </div>
+<br>
 
 
 <b><mark>docker network create kopru1</mark></b>
