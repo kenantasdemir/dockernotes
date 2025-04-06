@@ -223,7 +223,6 @@ sağlar.
 //--force seçeneği ile onay istemeden silinmeleri sağlanır.<br>
 
 <b><mark>docker network rm networkID kopru2</mark></b><br>
-<br>
 //id değeri ve ismi belirtilen network objelerini siler.
 <br>
 <b><mark>docker network rm kopru2</mark></b><br>
