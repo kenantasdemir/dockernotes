@@ -90,21 +90,25 @@ Genellikle, -it kombinasyonu, kullanıcıların container ile etkileşimde bulun
 
 <b><mark>docker container run -dit --name database --net kopru1 kenant42/ornekdocker sh</mark></b>
 <br>
-//kenant42/ornekdocker imajından database adlı container oluşturur. bu containerı kopru1 adlı networke bağlar.
-//-dit = -d -it
-//d parametresi u containerın detach modda çalışaağı belirtilir.
-//-it parametresi bu containera interaktif bir şekilde bağlanacağını belirtir.
-//son olarak sh parametresi ile bu container içinde shell açar
+//kenant42/ornekdocker imajından database adlı container oluşturur. bu containerı kopru1 adlı networke bağlar.<br>
+//-dit = -d -it  <br>
+//d parametresi u containerın detach modda çalışaağı belirtilir. <br>
+//-it parametresi bu containera interaktif bir şekilde bağlanacağını belirtir. <br>
+//son olarak sh parametresi ile bu container içinde shell açar <br>
 
+<br>
 docker ps
+<br>
 
-docker network inspect kopru1
+
+<b><mark>docker network inspect kopru1</mark></b><br>
 //kopru1 adlı network nesnesinin özelliklerini görüntüler.
+<br>
 
-docker attach websunucu
+<b><mark>docker attach websunucu</mark></b><br>
 //websunucu adlı docker konteynerının çalışma zamanı konsoluna bağlanmak için kullanılır.
 
-
+<br>
 :heavy_exclamation_mark: user tanımlı bridge'e bağlı olan containerlar arasında DNS hizmeti vardır
 
 ---------------------------------------------------------------------------------------------------------------------------------------
@@ -133,7 +137,7 @@ default bridge'te bu özellik yok
 <br>
 //database adlı containerı kopru2 adlı network objesini bağlar
 <br>
-<b><mark>docker attach database</mark></b>
+<b><mark>docker attach database</mark></b><br>
 //database adlı docker konteynerının çalışma zamanı konsoluna bağlanmak için kullanılır.
 
 
