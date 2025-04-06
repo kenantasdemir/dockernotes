@@ -9,17 +9,17 @@
 ‼️ Aksi belirtilmediği takdirde docker default olarak latest tagını kullanır.
 
 
-docker image tag mysql:5 kenant42/ornekdocker:latest
-//mysql:5 adlı Docker imajını kenant42/ornekdocker:latest adlı yeni bir imaj olarak etiketler.
+<b><mark>docker image tag mysql:5 kenant42/ornekdocker:latest</mark></b><br>
+//mysql:5 adlı Docker imajını kenant42/ornekdocker:latest adlı yeni bir imaj olarak etiketler.<br>
 
-docker image ls
-//imajları listeler.
+<b><mark>docker image ls</mark></b><br>
+//imajları listeler.<br>
 
-docker image push kenant42/ornekdockerdeneme:latest
-//kenant42/ornekdockerdeneme:latest adlı imajı repoya yollar
+<b><mark>docker image push kenant42/ornekdockerdeneme:latest</mark></b><br>
+//kenant42/ornekdockerdeneme:latest adlı imajı repoya yollar<br>
 
-docker image pull kenant42/ornekdockerdeneme:latest
-//kenant42/ornekdockerdeneme imajının latest tagını çeker.
+<b><mark>docker image pull kenant42/ornekdockerdeneme:latest</mark></b><br>
+//kenant42/ornekdockerdeneme imajının latest tagını çeker.<br>
 
 
 ---
