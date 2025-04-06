@@ -7,10 +7,12 @@
 
 <br>
 <b><mark>docker container run -d --publish 8080:80 -p 53:53/udp imageName</mark></b>
+<br>
 //container oluşturur ve Docker host'un 53 numaralı UDP portunu konteynerın 53 numaralı UDP portuna yönlendirir.
 
 <br>
 <b><mark>docker container run -d --publish 8080:80 kenant42/ornekdocker</mark></b>
+<br>
 //kenant42/ornekdocker imajından bir container oluşturur. 8080 portu ile containerın 80 portunu eşler.
 
 <br>
@@ -23,6 +25,7 @@
 <br>
 
 <b><mark>docker container run -it -d --name database1 kenant42/ornekdocker sh</mark></b>
+<br>
 //kenant42/ornekdocker imajından database1 adlı container oluşturur ve bu container içinde shell açar
 
 <br>
@@ -47,29 +50,37 @@ docker container rm -f hfda5ad56had56hf hgfsja99afdsag5v12
 //id değerleri belirtilen 2 containerı siler
 //-f seçeneği ise bu containerların çalışması durumunda silmeye zorlar.
 
-docker run --rm --network host nginx
+<b><mark>docker run --rm --network host nginx</mark></b>
+<br>
+
 
 // bir sistemde sadece 1 adet host türünde network objesi bulunabilir
 //docker network create --driver bridge kopru2
 //host network oluşturdu
 
-docker network create kopru1
+<b><mark>docker network create kopru1</mark></b>
+<br>
 //kopru1 adlı network nesnesi oluşturuldu.
 
-docker network create mycustomnet --driver host
+<b><mark>docker network create mycustomnet --driver host</mark></b>
+<br>
 //hata
 
-docker network ls
+<b><mark>docker network ls</mark></b>
+<br>
 //network objelerini listeler.
 
-docket network inspect kopru1
+<b><mark>docker network inspect kopru1</mark></b>
+<br>
 //kopru1 adlı network objesininin özelliklerini görüntüler.
 
 
 
-docker container run -dit --name websunucu --net kopru1 kenant42/ornekdocker sh
+<b><mark>docker container run -dit --name websunucu --net kopru1 kenant42/ornekdocker sh</mark></b>
+<br>
 
-docker container run -dit --name database --net kopru1 kenant42/ornekdocker sh
+<b><mark>docker container run -dit --name database --net kopru1 kenant42/ornekdocker sh</mark></b>
+<br>
 //kenant42/ornekdocker imajından database adlı container oluşturur. bu containerı kopru1 adlı networke bağlar.
 //-dit = -d -it
 //d parametresi u containerın detach modda çalışaağı belirtilir.
