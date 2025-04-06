@@ -184,6 +184,7 @@ DNS vardır. çalışan containerlara bağlanabilirler.
 </div>
 <br>
 ---------------------------------------------------------------------------------------------------------------------------------------
+
 <b><mark>docker network connect kopru2 database</mark></b>
 <br>
 
