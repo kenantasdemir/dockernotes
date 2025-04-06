@@ -135,7 +135,7 @@ default bridge'te bu özellik yok
 
 <b><mark>docker network connect kopru2 database</mark></b>
 <br>
-//database adlı containerı kopru2 adlı network objesini bağlar
+//database adlı containerı kopru2 adlı network objesini bağlar<br>
 <br>
 <b><mark>docker attach database</mark></b><br>
 //database adlı docker konteynerının çalışma zamanı konsoluna bağlanmak için kullanılır.
