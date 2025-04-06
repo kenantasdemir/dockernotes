@@ -140,11 +140,15 @@ default bridge'te bu özellik yok
 
 
 ✅ bir container aynı anda birden fazla bridge bağlanabilir.
+<br>
 
-docker network disconnect kopru2 database
+<b><mark>docker network disconnect kopru2 database</mark></b>
+<br>
 //containerla köprü bağlantısını kestik
+<br>
 
-docker network inspect kopru2
+<b><mark>docker network inspect kopru2</mark></b>
+<br>
 
 
 
@@ -164,7 +168,7 @@ docker network inspect kopru2
 
 
 
-<div align="center">
+<div >
   default bridge netwrk objesi
 bu network nesnesine bağlı containerlar birbirleriyle haberleşebilir
 fakat DNS yani isim çözümleme yoktur.
@@ -174,11 +178,12 @@ kullanıcı tanımlı bridge nesnelerinde ise
 DNS vardır. çalışan containerlara bağlanabilirler.
 
 </div>
+<br>
 
 <b><mark>docker network connect kopru2 database</mark></b>
 <br>
 
-<div align="center">
+<div>
   bir Docker konteynerini mevcut bir Docker ağına bağlamak için kullanılır. 
 Bu komut, bir konteyneri yeni bir ağa bağlayarak, 
 ağ üzerinde farklı konteynerlerle iletişim kurmasını sağlar.
@@ -190,12 +195,14 @@ standart çıkış (stdout) ve standart hata (stderr) akışlarını,
 yani konteynerin terminal çıktısını görmenizi ve etkileşime geçmenizi 
 sağlar.
 </div>
+<br>
 
 
 
 <b><mark>docker run -dit --network=kopru2 myContainer</mark></b>
 <br>
 //bir container başlatırken network nesnesi bağlandı.
+<br>
 
 <b><mark>docker network connect --ip 10.10.36.122 kopru2 mySecondContainer</mark></b>
 <br>
