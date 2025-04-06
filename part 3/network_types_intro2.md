@@ -183,7 +183,9 @@ DNS vardır. çalışan containerlara bağlanabilirler.
 
 </div>
 <br>
----------------------------------------------------------------------------------------------------------------------------------------
+
+---
+
 <br>
 <b><mark>docker network connect kopru2 database</mark></b>
 <br>
@@ -191,7 +193,7 @@ DNS vardır. çalışan containerlara bağlanabilirler.
 <div>
   bir Docker konteynerini mevcut bir Docker ağına bağlamak için kullanılır. 
 Bu komut, bir konteyneri yeni bir ağa bağlayarak, 
-ağ üzerinde farklı konteynerlerle iletişim kurmasını sağlar.
+ağ üzerinde farklı konteynerlerle iletişim kurmasını sağlar.<br>
 <b><mark>docker attach database</mark></b>
 <br>
 çalışmakta olan bir Docker konteynerine bağlanmanıza olanak tanır. 
