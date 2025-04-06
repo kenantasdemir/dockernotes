@@ -215,7 +215,7 @@ ARG ile tanımlanan değişken bu imajdan yaratılan container içerisinden eri�
 
 ###################################################################################################################3
 
-docker image oluşturma yöntem 2(containerdan image oluşturma)
+
 
 
 docker container run -it --name con1 ubuntu:latest bash
@@ -230,6 +230,8 @@ wget https://wordpress.org/latest.tar.gz
 //wordpress son sürümü indirildi.
 exit
 clear
+
+docker image oluşturma yöntem 2(containerdan image oluşturma)
 
 docker commit con1 kenant42/con1:latest
 //kenant42/con1:latest tagli image haline geldi
@@ -264,8 +266,8 @@ docker save kenant42/con1:latest -o con1imaj.tar
 //kenant42//con1:latest adlı imajı con1imaj.tar olarak kaydeder. yani sıkıştırır.
 
 
-docker load -i con1imaj.tar
-//bu komut ile docker imajı bir arşiv dosyasından yüklenir.
+<b><mark>docker load -i con1imaj.tar</mark></b><br>
+//bu komut ile docker imajı bir arşiv dosyasından yüklenir.<br>
 
 
 
