@@ -46,17 +46,22 @@ Genellikle, -it kombinasyonu, kullanıcıların container ile etkileşimde bulun
 docker ps -a
 //çalışan ya da çalışmayan tüm containerları listeler.
 
-docker container rm -f hfda5ad56had56hf hgfsja99afdsag5v12
+<b>docker container rm -f hfda5ad56had56hf hgfsja99afdsag5v12</b>
+<br>
 //id değerleri belirtilen 2 containerı siler
+<br>
 //-f seçeneği ise bu containerların çalışması durumunda silmeye zorlar.
+<br>
 
 <b><mark>docker run --rm --network host nginx</mark></b>
 <br>
 
-
-// bir sistemde sadece 1 adet host türünde network objesi bulunabilir
+<div align="center">
+  // bir sistemde sadece 1 adet host türünde network objesi bulunabilir
 //docker network create --driver bridge kopru2
 //host network oluşturdu
+</div>
+
 
 <b><mark>docker network create kopru1</mark></b>
 <br>
@@ -112,15 +117,21 @@ docker network inspect kopru2
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
-kullanıcı tanımlı köprülerin önemli bir özelliği
+<div align="center">
+  kullanıcı tanımlı köprülerin önemli bir özelliği
 containerlar çalışırken bunlara bağlanabilir
 default bridge'te bu özellik yok
+</div>
+<br>
 
-read escape sequence
-docker network connect kopru2 database
+
+<b><mark>docker network connect kopru2 database</mark></b>
+<br>
 //database adlı containerı kopru2 adlı network objesini bağlar
+<br>
+<b><mark>docker attach database</mark></b>
+<br>
 
-docker attach database
 //database adlı docker konteynerının çalışma zamanı konsoluna bağlanmak için kullanılır.
 
 
@@ -136,18 +147,21 @@ docker network inspect kopru2
 :x: eğer bir köprü bir containera bağlı ise bu köprü silinemez
 
 
-docker network rm kopru2
+<b><mark>docker network rm kopru2</mark></b>
+<br>
 //kopru2 adlı network objesini siler.
 
-docker container rm -f websunucu database
+<b><mark>docker container rm -f websunucu database</mark></b>
+<br>
 //websunucu ve database adlı 2 containerı siler.
 
-docker network rm kopru1
+<b>docker network rm kopru1</b>
+<br>
 
 
 
-
-default bridge netwrk objesi
+<div align="center">
+  default bridge netwrk objesi
 bu network nesnesine bağlı containerlar birbirleriyle haberleşebilir
 fakat DNS yani isim çözümleme yoktur.
 çalışan containerlara bağlanamazlar.
@@ -155,17 +169,23 @@ fakat DNS yani isim çözümleme yoktur.
 kullanıcı tanımlı bridge nesnelerinde ise
 DNS vardır. çalışan containerlara bağlanabilirler.
 
-read escape sequence
-docker network connect kopru2 database
-bir Docker konteynerini mevcut bir Docker ağına bağlamak için kullanılır. 
+</div>
+
+<b><mark>docker network connect kopru2 database</mark></b>
+<br>
+
+<div align="center">
+  bir Docker konteynerini mevcut bir Docker ağına bağlamak için kullanılır. 
 Bu komut, bir konteyneri yeni bir ağa bağlayarak, 
 ağ üzerinde farklı konteynerlerle iletişim kurmasını sağlar.
-docker attach database
+<b><mark>docker attach database</mark></b>
+<br>
 çalışmakta olan bir Docker konteynerine bağlanmanıza olanak tanır. 
 Bu komut, konteynerin standart giriş (stdin), 
 standart çıkış (stdout) ve standart hata (stderr) akışlarını, 
 yani konteynerin terminal çıktısını görmenizi ve etkileşime geçmenizi 
 sağlar.
+</div>
 
 
 
