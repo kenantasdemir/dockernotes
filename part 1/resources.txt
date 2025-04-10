@@ -4,6 +4,8 @@ docker update --cpu-shares 512 containerID
 docker update -m 300M containerID
 //idsi belirtilen containera 300 mb bellek kısıtı koyuldu. 
 
+docker container update --memory=100M --memory-swap=200M ornekimaj
+
 docker update --restart=on-failure:3 containerID1 containerID2
 //id değerleri belirtilen containerlara restart policy atandı.
 //bu container artık hata durumuyla karşılaştığında yeniden başlayacak
