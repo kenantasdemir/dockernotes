@@ -33,8 +33,8 @@ docker image history ubuntu:latest
 <b><mark>docker image load --input fedora.tar</mark></b><br>
 //fedora.tar içindeki dosyaları imaj olarak yükler.<br>
 
-<b><mark>docker image load < fedora.tar</mark></b><br
-//yukarıdaki komutun alternatifidir. Bu komutta imajları STDIN kullanarak yükler.
+<b><mark>docker image load < fedora.tar</mark></b><br>
+//yukarıdaki komutun alternatifidir. Bu komutta imajları STDIN kullanarak yükler.<br>
 
 docker image rm --help
 //docker image rm komutu hakkında yardım sayfası görüntüler.
@@ -214,11 +214,11 @@ Docker info
 Docker
 
 Docker run hello-world
-Docker Container rum hallo-world
+Docker Container run hello-world
 
 Docker image rm --help
 
-Docker Containeriner run --name ilkcontainer imageName
+Docker Container run --name ilkcontainer imageName
 Container çalıştırıldığında Container Shelli client shelline bağlanır.
 
 Docker Container ls 
