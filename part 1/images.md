@@ -30,10 +30,10 @@ docker image ls
 docker image history ubuntu:latest
 //ubuntu:latest imajına ait geçmişi görüntüler.
 
-docker image load --input fedora.tar
-//fedora.tar içindeki dosyaları imaj olarak yükler.
+<b><mark>docker image load --input fedora.tar</mark></b><br>
+//fedora.tar içindeki dosyaları imaj olarak yükler.<br>
 
-docker image load < fedora.tar
+<b><mark>docker image load < fedora.tar</mark></b><br
 //yukarıdaki komutun alternatifidir. Bu komutta imajları STDIN kullanarak yükler.
 
 docker image rm --help
