@@ -7,9 +7,9 @@ Volume objeleri, Docker'da dosyaların containerlar arasında paylaşılması i�
 Bu sayede, containerlar arasında veri paylaşımı daha kolay ve verimli bir şekilde yapılabilir.
 
 Bununla birlikte, Docker'da volume objelerinin mount edileceği yöntemler farklı olabilir. 
-Volume objeleri, host dosya sistemi tarafından sağlanan bir disk bölümüne veya uzaktan bir depolama alanına bağlanabilir.
+<b><mark>Volume objeleri, host dosya sistemi tarafından sağlanan bir disk bölümüne veya uzaktan bir depolama alanına bağlanabilir.</mark></b><br>
  Bu nedenle, volume objelerinin nereye monte edileceği, 
-containerların gereksinimlerine ve verilerin nerede saklanacağına bağlı olarak değişebilir.
+containerların gereksinimlerine ve verilerin nerede saklanacağına bağlı olarak değişebilir.<br>
 
 Docker'da, volume objeleri containerlar arasında dosya paylaşımını sağlamak için kullanılır 
 ve bu nedenle containerlarla bir bağlantıları vardır. 
@@ -18,8 +18,8 @@ containerlardaki verilerin disk üzerinde saklanmasını sağlar.
 
 Docker'da bir volume oluşturmak, Docker ana makinesinde bir dosya sistemi alanı ayırmak 
 ve bunu bir veya daha fazla Docker konteynerine monte etmek anlamına gelir. 
-Bu nedenle, bir konteynerle birlikte bir volume oluşturulduğunda, 
-volume silinse bile konteyner içindeki dosyalar kalıcı olarak saklanır. 
+Bu nedenle, <b><mark>bir konteynerle birlikte bir volume oluşturulduğunda, 
+volume silinse bile konteyner içindeki dosyalar kalıcı olarak saklanır. </mark></b><br>
 Ancak, volume oluşturulduğunda --name seçeneği ile adlandırılabilir ve böylece 
 diğer konteynerlar da aynı volume'u kullanabilirler. 
 Bu durumda, tüm konteynerlar volume'u paylaşır ve volume silinirse, 
@@ -52,9 +52,9 @@ Bu, /uygulama dizinindeki dosyaların ilkvolume adlı Docker volumünde saklanac
 Bu komut, Docker konteynerinde çalıştırılan bir uygulamanın, 
 uygulamanın gerektirdiği dosyaları dışarıda (ana bilgisayar sistemde) tutmak için kullanılabilir.
 
-çalışan containera volume bağlanabilir.
-aşağıdaki gibi bir komutla çalışan bir containera volume bağlanabilir.
-docker container run --mount source=<volume-adı> target=<hedef-dizin> <container-adı veya ID'si>
+<b><mark>çalışan containera volume bağlanabilir.</mark></b><br>
+aşağıdaki gibi bir komutla çalışan bir containera volume bağlanabilir.<br>
+docker container run --mount source=<volume-adı> target=<hedef-dizin> <container-adı veya ID'si><br>
 
 
 container silinse bile volume silinmez. 
@@ -63,7 +63,7 @@ olarak devam eder ve manuel olarak silinene kadar kalır.
 Bu, volume nesnesiyle bağlantısı kesilen yeni containerların oluşturulmasına olanak tanır.
 
 Bunun için, docker volume rm komutu ile açıkça silinmesi gerekir. 
-Ancak, bir volume, kullanılmayan bir container'ın silinmesi sırasında otomatik olarak silinebilir.
+<b><mark>Ancak, bir volume, kullanılmayan bir container'ın silinmesi sırasında otomatik olarak silinebilir.</mark></b><br>
 Bunu önlemek için, volume'u silmek yerine, docker volume prune komutunu kullanabilirsiniz, 
 bu komut kullanılmayan tüm volumeleri siler. 
 
@@ -180,9 +180,9 @@ dolu bir volumeü dolu bir klasöre mount ederseniz sadece volume içindeki dosy
 
 -----------------------------------------------
 
-ciddi verilerle uğraşırken production gibi ortamlarda veri saklamak için sadece volume kullan
+‼️ ciddi verilerle uğraşırken production gibi ortamlarda veri saklamak için sadece volume kullan
 
-bind mounts production ortamında kullanılmamalıdır!!!
+‼️  bind mounts production ortamında kullanılmamalıdır!!!
 
 Host üstündeki bir klasör ya da dosyayı
   Container içerisine map edebiliriz.
