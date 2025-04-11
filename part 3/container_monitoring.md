@@ -1,5 +1,5 @@
-docker container run -d --name appbir kenant42/app1
-//kenant42/app1 imajından appbir adlı container oluşturur. bu container detach olarak çalışır.
+docker container run -d --name appbir kenant42/app1<br>
+//kenant42/app1 imajından appbir adlı container oluşturur. bu container detach olarak çalışır.<br>
 docker logs appbir
 //appbir adlı containerın loglarını görüntüler.
 
