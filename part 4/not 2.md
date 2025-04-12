@@ -197,12 +197,12 @@ bir sonraki kademede oluşturacağımız imaja kopyalayabilmemize imkan sağlar.
 
 docker image build -t uygulama:3.7.6 .
 //mevcut dizinde bulunan Dockerfile adlı dosyayı kullanarak yeni bir imaj oluşturur.
-//bu imajın ismi uygulama olacaktır. tagı ise 3.7.6 şeklindedir.
+//bu imajın ismi uygulama olacaktır. tagı ise 3.7.6 şeklindedir.<br>
 
 
 
-docker image build -t x1 --build-arg VERSION=3.7.1 .
-//Bu komut, . dizinindeki Dockerfile dosyasını kullanarak bir Docker imajı oluşturur. 
+<b><mark>docker image build -t x1 --build-arg VERSION=3.7.1 .</mark></b><br>
+//Bu komut, . dizinindeki Dockerfile dosyasını kullanarak bir Docker imajı oluşturur. <br>
 //Oluşturulan imajın adı x1 olarak belirlenir. 
 //Ayrıca, --build-arg parametresi ile Dockerfile içinde tanımlı olan VERSION değişkenine 3.7.1 değeri atanır.
 
