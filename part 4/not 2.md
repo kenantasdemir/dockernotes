@@ -232,7 +232,7 @@ clear
 
 docker image oluşturma yöntem 2(containerdan image oluşturma)
 
-docker commit con1 kenant42/con1:latest
+<b><mark>docker commit con1 kenant42/con1:latest</mark></b><br>
 //kenant42/con1:latest tagli image haline geldi
 //Bu komut, bir Docker container'dan yeni bir image oluşturur ve bu image'ı belirtilen ad ve etiketle (kenant42/con1:latest) kaydeder. 
 //Bu, container'ın mevcut durumunu kaydederek ve bu duruma dayalı bir image oluşturarak container'ı "dondurmayı" sağlar. 
