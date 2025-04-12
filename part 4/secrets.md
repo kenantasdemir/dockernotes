@@ -10,5 +10,5 @@ docker exec -it containerID sh
 
 <b><mark>docker service create -d --name secretdeneme --secret username --secret sifre kenant42/app1</mark></b><br>
 
-<b><mark>echo "sifrelenecekmetin" | docker secret create sifre2 -</mark></b><br>
+<b><mark>echo "sifrelenecekmetin" | docker secret create sifre2 -</mark></b><br><br>
 <b><mark>docker service update --secret-rm sifre --secret-add sifre2 secretdeneme</mark></b><br>
