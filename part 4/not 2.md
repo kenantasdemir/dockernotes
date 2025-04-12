@@ -316,13 +316,17 @@ cd /temp
 apt-get install wget
 wget https://wordpress.org/latest.tar.gz
 exit
-clear
+clear<br>
 
-docker commit con1 ozgurozturknet/con1:latest
-//ozgurozturknet/con1:latest tagli image haline geldi
+<b><mark>docker commit con1 ozgurozturknet/con1:latest</mark></b><br>
+//ozgurozturknet/con1:latest tagli image haline geldi<br>
 
-docker commit -a "kenant42" -m "Hello World" b33container be33imaj
-docker commit --change='CMD ["python", "app.py"]' my-container new-image:latest
+<b><mark>docker commit -a "kenant42" -m "Hello World" b33container be33imaj</mark></b><br>
+-a --> author<br>
+-m --> message<br>
+
+<b><mark>docker commit --change='CMD ["python", "app.py"]' my-container new-image:latest</mark></b><br>
+
 docker commit \
   --change='ENV APP_ENV=production' \
   --change='CMD ["node", "server.js"]' \
