@@ -8,10 +8,9 @@ docker run --name new_container -d new_image
 
 docker run -d --label app=webserver --label owner=ahmet nginx
 
+<b><mark>docker export red_panda_container > latest.tar</mark></b><br>
 
-docker export red_panda_container > latest.tar
-
-docker export --output="latest.tar" red_panda_container
+<b><mark>docker export --output="latest.tar" red_panda_container</mark></b><br>
 
 docker container diff containerID
 
@@ -42,7 +41,7 @@ Konteyneri her durumda yeniden başlatır.
 docker update --memory-swap 2g my-container
 Bu komut, konteynerin bellek + swap kullanımını 2 GB ile sınırlar.
 
-docker update --memory-reservation 512m my-container
+<b><mark>docker update --memory-reservation 512m my-container</mark></b><br>
 Bu komut, konteyner için 512 MB bellek rezervasyonunu garanti eder.
 
 docker update --memory 1g my-container
@@ -56,7 +55,7 @@ Bu komut, konteynerin yalnızca CPU 0 ve 1 üzerinde çalışmasına izin verir.
 docker update --cpus 2 my-container
 Bu komut, konteynerin en fazla 2 CPU çekirdeği kullanmasına izin verir.
 
-docker update --cpu-rt-runtime 80000 my-container
+<b><mark>docker update --cpu-rt-runtime 80000 my-container</mark></b><br>
 Bu komut, gerçek zamanlı çalışmayı 80 ms ile sınırlar.
 
 
