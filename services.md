@@ -1,6 +1,6 @@
 docker service create --name redis redis:7.4.1
 
-docker service create --mode global --name redis2 redis:7.4.1
+<b><mark>docker service create --mode global --name redis2 redis:7.4.1</mark></b><br>
 
 docker service ls
 
@@ -15,17 +15,14 @@ docker service create --name redis \
 
 docker service create --name=redis --config redis-conf redis:7.4.1
 
-docker service create \
-  --name my_service \
-  --constraint 'node.labels.role==frontend' \
-  nginx:latest
+<b><mark>docker service create --name my_service --constraint 'node.labels.role==frontend' nginx:latest</mark></b><br>
 
 
 docker service create --replicas 10 --name redis --update-delay 10s --update-parallelism 2 redis:7.4.1
 
 docker service create --name redis_2 --replicas 5 --env MYVAR=foo --env MYVAR2=bar redis:7.4.1
 
-docker service create --name redis --hostname myredis redis:7.4.1
+<b><mark>docker service create --name redis --hostname myredis redis:7.4.1</mark></b><br>
 
 docker service create --name redis_2 --label com.example.foo="bar" --label bar=baz redis:7.4.1
 
@@ -36,15 +33,15 @@ docker service create --name my-service --replicas 3 --mount type=volume,destina
 
 docker service create --name my-service --mount type=bind,source=/path/on/host,destination=/path/in/container nginx:alpine
 
-docker service create --name redis_2 --mode global redis:7.4.1
-//replicated service belirtilen sayıda görev çalıştırır.
-//global service ise swarm üzerinde her node üstünde çalışır.
+<b><mark>docker service create --name redis_2 --mode global redis:7.4.1</mark></b><br>
+//replicated service belirtilen sayıda görev çalıştırır.<br>
+//global service ise swarm üzerinde her node üstünde çalışır.<br>
 
 docker service create --name redis_2 --constraint node.platform.os==linux --constraint node.labels.type==queue redis:7.4.1
 
-docker service create --reserve-memory=4GB --name=too-big nginx:alpine
+<b><mark>docker service create --reserve-memory=4GB --name=too-big nginx:alpine</mark></b><br>
 
-docker service create --limit-memory=4GB --name=too-big nginx:alpine
+<b><mark>docker service create --limit-memory=4GB --name=too-big nginx:alpine</mark></b><br>
 
 docker service create --name nginx --replicas 2 --replicas-max-per-node 1 --placement-pref 'spread=node.labels.datacenter' nginx
 
