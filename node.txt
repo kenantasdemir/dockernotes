@@ -9,10 +9,10 @@ docker node ls --format table
 
 docker node rm swarmNode
 
-docker node promote nodeName
+<b><mark>docker node promote nodeName</mark></b><br>
 //node'u manager olarak yükseltir.
 
-docker node demote nodeName
+<b><mark>docker node demote nodeName</mark></b><br>
 //manager node'u normal node'a çevirir.
 
 docker node inspect nodeName
