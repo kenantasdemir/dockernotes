@@ -8,11 +8,12 @@ docker compose -f dockerfile1.yaml -f dockerfile2.yaml up
 docker-compose down
 //servisleri durdurur ve siler
 
-docker-compose config
+<b><mark>docker-compose config</mark></b><br>
 
-docker-compose images
-//servislerin hangi imajdan oluştuğunu görüntüler
-docker-compose logs
+<b><mark>docker-compose images</mark></b><br>
+//servislerin hangi imajdan oluştuğunu görüntüler<br>
+
+<b><mark>docker-compose logs</mark></b><br>
 
 docker-compose exec webservis ls -a
 //servis içerisinde komut çalıştırdık.
